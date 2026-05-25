@@ -55,7 +55,13 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  let body: { type?: string; data?: { id?: string } };
+  let body: {
+    type?: string;
+    data?: { id?: string };
+    live_mode?: boolean;
+    user_id?: string | number;
+    action?: string;
+  };
   try {
     body = await req.json();
   } catch {
@@ -65,20 +71,23 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // MP firma el HMAC sobre el `data.id` que viene en el QUERY STRING de la
-  // URL (no en el body JSON). En el body suele ser igual, pero el query
-  // string es el oficial según docs. Tomamos query primero con fallback
-  // al body por compatibilidad.
   const dataIdFromQuery = req.nextUrl.searchParams.get("data.id");
   const dataIdFromBody = body?.data?.id;
   const dataId = dataIdFromQuery ?? dataIdFromBody;
 
-  // Log temporal para confirmar de dónde se está leyendo.
-  console.log("[webhook] dataId resolution", {
+  // Log temporal para diagnosticar mismatch de modo (test vs prod).
+  // Muestra primeros/últimos chars del access token sin filtrar todo.
+  console.log("[webhook] inspection", {
     fromQuery: dataIdFromQuery,
     fromBody: dataIdFromBody,
-    used: dataId,
     fullUrl: req.url,
+    bodyLiveMode: body.live_mode,
+    bodyUserId: body.user_id,
+    bodyAction: body.action,
+    bodyType: body.type,
+    accessTokenFirst10: mpEnv.data.MERCADOPAGO_ACCESS_TOKEN.slice(0, 10),
+    accessTokenLast4: mpEnv.data.MERCADOPAGO_ACCESS_TOKEN.slice(-4),
+    accessTokenLength: mpEnv.data.MERCADOPAGO_ACCESS_TOKEN.length,
   });
 
   if (!dataId) {
