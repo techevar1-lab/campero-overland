@@ -65,7 +65,22 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const dataId = body?.data?.id;
+  // MP firma el HMAC sobre el `data.id` que viene en el QUERY STRING de la
+  // URL (no en el body JSON). En el body suele ser igual, pero el query
+  // string es el oficial según docs. Tomamos query primero con fallback
+  // al body por compatibilidad.
+  const dataIdFromQuery = req.nextUrl.searchParams.get("data.id");
+  const dataIdFromBody = body?.data?.id;
+  const dataId = dataIdFromQuery ?? dataIdFromBody;
+
+  // Log temporal para confirmar de dónde se está leyendo.
+  console.log("[webhook] dataId resolution", {
+    fromQuery: dataIdFromQuery,
+    fromBody: dataIdFromBody,
+    used: dataId,
+    fullUrl: req.url,
+  });
+
   if (!dataId) {
     return NextResponse.json(
       { error: "missing_data_id" },
