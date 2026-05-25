@@ -1,0 +1,47 @@
+{
+  "_comment": "Materiales disponibles para el Campero. priceMultiplier es factor sobre el precio base del producto (solo mobiliario; no afecta accesorios). weightFactor y volumeFactor afectan el peso/volumen del bolso final. El precio listado en productos.json corresponde al material birch (premium estándar); recycled aplica un descuento de 20% sobre ese base.",
+  "materials": [
+    {
+      "id": "recycled",
+      "name": "Plástico reciclado",
+      "fullName": "Plástico reciclado PET/HDPE",
+      "badge": {
+        "text": "SUSTENTABLE",
+        "variant": "eco"
+      },
+      "description": "Polímeros PET/HDPE reciclados de uso post-consumo. Más liviano, resistente al agua y a los rayos UV. Tu compra retira plástico del medio ambiente.",
+      "shortDescription": "Más liviano y resistente al agua. Retira plástico del medio ambiente.",
+      "attributes": {
+        "weight": "−30% liviano",
+        "aesthetic": "Texturizado mate",
+        "durability": "Alta",
+        "waterResistance": "100% impermeable"
+      },
+      "priceMultiplier": 0.8,
+      "weightFactor": 0.7,
+      "volumeFactor": 1.0,
+      "isDefault": true
+    },
+    {
+      "id": "birch",
+      "name": "Terciado de abedul",
+      "fullName": "Terciado de abedul báltico grado A",
+      "badge": {
+        "text": "PREMIUM",
+        "variant": "premium"
+      },
+      "description": "Madera contralaminada báltica grado A. Acabado natural envejecido con aceites. Estética artesanal y máxima durabilidad. Soporta más peso.",
+      "shortDescription": "Madera natural artesanal. Soporta más peso, estética premium.",
+      "attributes": {
+        "weight": "Estándar",
+        "aesthetic": "Madera natural",
+        "durability": "Máxima",
+        "waterResistance": "Tratado con aceites hidrófugos"
+      },
+      "priceMultiplier": 1.0,
+      "weightFactor": 1.0,
+      "volumeFactor": 1.05,
+      "isDefault": false
+    }
+  ]
+}

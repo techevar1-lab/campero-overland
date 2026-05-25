@@ -1,0 +1,332 @@
+{
+  "Navigation": {
+    "product": "Producto",
+    "configurator": "Configurador",
+    "history": "Historia",
+    "contact": "Contacto"
+  },
+
+  "HomePage": {
+    "Hero": {
+      "label": "DISEÑADO EN LA PATAGONIA",
+      "title": "El camper<br></br>que se guarda<br></br><em>en su estuche.</em>",
+      "subtitle": "Mobiliario portátil de camperización para SUV overland. Sistema de ensambles sin tornillos. Listo para llegar, armar y rodar.",
+      "ctaPrimary": "Configurar el mío →",
+      "ctaSecondary": "Ver el sistema",
+      "statArmedLabel": "ARMADO EN",
+      "statArmedValue": "10 min",
+      "statNoToolsLabel": "SIN UN SOLO",
+      "statNoToolsValue": "tornillo."
+    },
+    "Manifesto": {
+      "label": "MANIFIESTO",
+      "quote": "Cada milímetro pensado para que armes, desarmes y guardes. No un mueble fijo: un camper portátil.",
+      "author": "— TOMÁS, FUNDADOR"
+    },
+    "Principles": {
+      "p1Label": "PRINCIPIO 01",
+      "p1Title": "Sistema modular, sin tornillos.",
+      "p1Body": "Cada pieza encastra con ensambles de fricción. Lo armas, lo desarmas, lo llevas en su estuche.",
+      "p2Label": "PRINCIPIO 02",
+      "p2Title": "Dimensionado al milímetro.",
+      "p2Body": "Cada compartimento calza con el accesorio que eliges. Si no lo eliges, el espacio queda libre."
+    },
+    "Tagline": "Diseñado en Pucón. Pensado para todo el sur.",
+    "Catalog": {
+      "label": "CATÁLOGO COMPLETO",
+      "title": "Seis formas de viajar.",
+      "compareLink": "VER COMPARATIVA →"
+    },
+    "Complements": {
+      "label": "LLEGA Y RUEDA",
+      "title": "Complementos<br></br>incluidos.<br></br><em>Cero vueltas.</em>",
+      "body": "Si sumas refrigeración, energía o agua, te llegan instalados y listos para usar. Trabajamos directo con <brand>Alpicool</brand>, <brand>EcoFlow</brand> y proveedores locales para que tu Campero salga de fábrica con todo conectado.",
+      "tagRefrigeration": "REFRIGERACIÓN",
+      "tagEnergy": "ENERGÍA",
+      "tagWater": "AGUA",
+      "items": {
+        "fridgeBrand": "Alpicool",
+        "fridgeVariants": "X18 · X25",
+        "powerBrand": "EcoFlow",
+        "powerVariants": "RIVER 3 · PLUS · PRO",
+        "waterBrand": "Bidón + bomba",
+        "waterVariants": "6L · 10L · 19L",
+        "ready": "PLUG & PLAY"
+      }
+    },
+    "CtaFinal": {
+      "label": "¿LISTO PARA CONFIGURAR?",
+      "title": "Seis preguntas.<br></br><em>Tu Campero ideal.</em>",
+      "subtitle": "Te ayudamos a elegir el modelo, material y accesorios que se adaptan a cómo viajas.",
+      "cta": "Empezar configurador →"
+    }
+  },
+
+  "Footer": {
+    "tagline": "PUCÓN · CHILE · 2026"
+  },
+
+  "Configurator": {
+    "progress": {
+      "label": "PASO {current} DE {total}"
+    },
+    "nav": {
+      "back": "← Atrás",
+      "next": "Siguiente →",
+      "pay": "Pagar {amount} con MercadoPago →"
+    },
+    "email": {
+      "label": "CORREO ELECTRÓNICO *",
+      "placeholder": "tu@correo.cl",
+      "helper": "Te enviamos confirmación, factura y seguimiento.",
+      "errorInvalid": "Ingresa un correo válido"
+    },
+    "checkoutError": {
+      "backendUnavailable": "El sistema de pagos no está disponible por ahora. Vuelve a intentarlo más tarde o contáctanos.",
+      "network": "No pudimos contactar el servidor. Revisa tu conexión y reintenta.",
+      "generic": "Algo no salió bien al iniciar el pago. Reintenta o contáctanos."
+    },
+    "disclaimer": "Fabricación bajo pedido · 15 días hábiles · Garantía 12 meses",
+    "preview": {
+      "placeholder": "Selecciona una opción para ver tu configuración",
+      "weightLabel": "PESO BOLSO",
+      "volumeLabel": "VOLUMEN BOLSO",
+      "totalLabel": "TOTAL ESTIMADO",
+      "compartmentWater": "AGUA",
+      "compartmentFridge": "REFRIGERACIÓN",
+      "compartmentPower": "ENERGÍA",
+      "compartmentEmpty": "Vacío"
+    },
+    "step1": {
+      "question": "¿Qué vehículo tienes?",
+      "helper": "Empezamos por aquí. Esto define los modelos disponibles.",
+      "options": {
+        "jimny3": "Suzuki Jimny 3 puertas",
+        "jimny3Sub": "Generación JB64 / 2018+",
+        "jimny5": "Suzuki Jimny 5 puertas",
+        "jimny5Sub": "Generación JB74 / 2023+",
+        "other": "Otro SUV / Pick-up",
+        "otherSub": "Te ofrecemos Campero Go universal"
+      }
+    },
+    "step2": {
+      "question": "¿Cómo viajas?",
+      "helper": "¿Duermes adentro de tu vehículo o tienes carpa de techo / camping?",
+      "options": {
+        "outside": "No duermo adentro",
+        "outsideSub": "Tengo carpa de techo, camping o duermo afuera",
+        "inside": "Duermo adentro del vehículo",
+        "insideSub": "Necesito cama plegable integrada"
+      }
+    },
+    "step3": {
+      "question": "Tu Campero recomendado",
+      "helper": "Esta opción se adapta a tu vehículo y uso."
+    },
+    "step4": {
+      "question": "¿Con qué material lo fabricamos?",
+      "helper": "Ambos materiales tienen la misma ingeniería de ensambles. Cambia el peso, la estética y el impacto.",
+      "labels": {
+        "weight": "Peso",
+        "aesthetic": "Estética"
+      },
+      "discountHint": "−{percent}% en el mueble"
+    },
+    "step5": {
+      "question": "Personaliza tu Campero",
+      "helper": "Tu Campero viene con compartimentos dimensionados para estos accesorios. Si los agregas, todo encaja perfectamente. Si no, el espacio queda libre para que pongas un complemento similar que ya tengas.",
+      "skipWarning": "¿Estás seguro? Al agregarlos, aprovechas al máximo el diseño modular. Si no, siempre puedes comprarlos después.",
+      "groupWater": "BIDÓN CON BOMBA DE AGUA",
+      "groupFridge": "REFRIGERACIÓN ENCHUFABLE",
+      "groupPower": "ESTACIÓN DE ENERGÍA",
+      "noneOption": "No incluir",
+      "detailToggle": "Ver detalle",
+      "detailHide": "Ocultar detalle",
+      "impactLine": "Peso +{weight} kg · Volumen +{volume} L"
+    },
+    "step6": {
+      "question": "Resumen y compra",
+      "helper": "Revisa tu configuración. Despachamos a todo Chile (envío flat $25.000).",
+      "sectionProduct": "PRODUCTO BASE",
+      "sectionAccessories": "ACCESORIOS",
+      "sectionSpecs": "ESPECIFICACIONES",
+      "sectionShipping": "DESPACHO",
+      "shippingLine": "Envío a todo Chile",
+      "materialLine": "Material: {material}",
+      "totalLine": "Total final",
+      "weightLine": "Peso bolso: {kg} kg",
+      "volumeLine": "Volumen bolso: {liters} L"
+    }
+  },
+
+  "Product": {
+    "breadcrumb": "Productos",
+    "specsTitle": "Especificaciones técnicas",
+    "specsDimensions": "Dimensiones armado",
+    "specsBag": "Bolso de transporte",
+    "specsBed": "Cama plegable",
+    "specsWeight": "Peso vacío",
+    "specsWeightHint": "Según material elegido",
+    "specsVolume": "Volumen del bolso",
+    "specsLoad": "Capacidad de carga",
+    "specsMaterials": "Materiales disponibles",
+    "specsMaterialsValue": "Plástico reciclado o Terciado de abedul",
+    "specsAddons": "Compatibilidad accesorios",
+    "specsAddonsValue": "Refrigeración hasta 25L · Energía hasta 800W · Bidón hasta 19L",
+    "howItWorks": {
+      "title": "Cómo funciona",
+      "step1Title": "Llegas",
+      "step1Body": "Te entregamos el Campero en su estuche.",
+      "step2Title": "Armas",
+      "step2Body": "Sin herramientas. Ensamble por fricción en 10 minutos.",
+      "step3Title": "Rodás",
+      "step3Body": "Tu Jimny convertido en camper portátil."
+    },
+    "cta": "Configurar este modelo →",
+    "notFound": {
+      "title": "Modelo no encontrado",
+      "body": "Este modelo no existe o ya no está disponible. Ver el catálogo completo.",
+      "back": "← Volver al catálogo"
+    }
+  },
+
+  "History": {
+    "title": "Pucón, Chile. Un Jimny. Una idea.",
+    "subtitle": "Campero nació en la ruta. Probamos cada compartimento, cada bisagra, cada ensamble en los caminos del sur antes de fabricar el primero para vender.",
+    "blocks": {
+      "originTitle": "El origen",
+      "originParagraphs": [
+        "Campero nació lejos de un escritorio. Entre ripio, lluvia y equipos que nunca terminaban de encajar bien. Tomás y María Paz comenzaron a diseñar las primeras piezas desde Pucón, después de meses recorriendo el sur de Chile y la Patagonia en un SUV cargado hasta el techo. La idea apareció en movimiento: cada parada implicaba sacar cosas, mover cajas, improvisar superficies y volver a ordenar antes de seguir.",
+        "Antes de fabricar para vender, fabricaron para ellos. Probaron prototipos en caminos reales, durmieron dentro del auto, ajustaron medidas en campings, estaciones de servicio y bajo lluvia patagónica. Cada error quedó registrado en la siguiente versión.",
+        "Con el tiempo entendieron algo simple: un vehículo pequeño podía transformarse en refugio, cocina y base de viaje sin perder su uso diario. Campero nació desde esa lógica. Portátil. Preciso. Hecho para moverse."
+      ],
+      "systemTitle": "El sistema",
+      "systemParagraphs": [
+        "Cada Campero funciona como un sistema de piezas que se unen por presión. Sin perforaciones. Sin tornillos. Sin herramientas. Las uniones fueron diseñadas para trabarse con firmeza y desmontarse igual de fácil después de días de ruta.",
+        "Una sola persona puede armarlo completo en menos de diez minutos. Después, todo vuelve a entrar en su estuche. Exacto. Compacto. Cada milímetro fue pensado para entrar y salir del vehículo sin forzar nada.",
+        "El proceso tomó meses de pruebas. Ajustes mínimos que cambiaban todo: una curva demasiado cerrada, un encastre que sonaba distinto con humedad, una pieza que vibraba en ripio. El sistema final no busca complejidad. Busca fluidez. Que el armado se vuelva parte natural del viaje y no una tarea más al final del día."
+      ],
+      "processTitle": "El proceso",
+      "processParagraphs": [
+        "Cada Campero se fabrica en Chile bajo pedido. No trabajamos con stock ni producción masiva. Cada sistema entra a fabricación una vez confirmado el modelo del vehículo y las configuraciones elegidas.",
+        "Las piezas se cortan en CNC para asegurar precisión constante en cada ensamble. Trabajamos con dos materiales principales: plástico reciclado PET/HDPE como opción base y terciado de abedul báltico para versiones premium. Ambos fueron seleccionados por resistencia, peso y comportamiento en ruta.",
+        "El tiempo de fabricación es de aproximadamente 15 días hábiles. Ese ritmo nos permite revisar cada pieza antes de salir del taller, probar encastres y controlar terminaciones manualmente.",
+        "No buscamos producir más rápido. Buscamos que cada sistema llegue listo para años de uso real."
+      ],
+      "southTitle": "El sur",
+      "southParagraphs": [
+        "Pucón no es solo nuestra base. Es parte del diseño. Acá los caminos cambian rápido, la lluvia aparece sin aviso y un mismo viaje puede pasar por asfalto, barro, nieve y ripio en un solo día.",
+        "Probamos los primeros Camperos recorriendo el sur de Chile y la Patagonia porque necesitábamos entender cómo respondían fuera del taller. Vibración constante, humedad, frío, polvo. El territorio funciona como filtro natural: lo que no resiste la ruta, simplemente no sirve.",
+        "La comunidad outdoor y overland del sur también ha sido parte del proceso. Viajeros, fotógrafos, esquiadores, pescadores y gente que vive mucho tiempo en movimiento. Personas que usan el vehículo como herramienta y refugio al mismo tiempo.",
+        "Diseñar desde acá cambia la manera de entender el espacio. Todo tiene que ocupar menos, durar más y adaptarse rápido."
+      ]
+    }
+  },
+
+  "Faq": {
+    "title": "Preguntas frecuentes",
+    "categories": {
+      "product": "Producto y diseño",
+      "purchase": "Compra y configuración",
+      "shipping": "Envío y entrega",
+      "warranty": "Garantía y postventa",
+      "accessories": "Accesorios"
+    },
+    "items": {
+      "q1": "¿Mi Jimny necesita modificaciones para el Campero?",
+      "a1": "No. El sistema se monta sobre el espacio de carga existente sin perforaciones, sin atornillar nada al vehículo. Lo retiras cuando quieras.",
+      "q2": "¿Cuánto tarda en armarse?",
+      "a2": "Una persona sola arma el sistema completo en unos 10 minutos. No requiere herramientas.",
+      "q3": "¿Funciona si llueve?",
+      "a3": "Sí. Si elegís el material reciclado (PET/HDPE), es 100% resistente al agua. El terciado de abedul tiene un acabado con aceites hidrófugos.",
+      "q4": "¿Puedo comprar el Campero sin accesorios y agregarlos después?",
+      "a4": "Sí. El Campero viene con compartimentos dimensionados para los accesorios recomendados (Alpicool, EcoFlow, bidones), pero si decides no comprarlos, el espacio queda libre y puedes usar uno similar que ya tengas. Siempre podés agregarlos después.",
+      "q5": "¿Hacen envíos a Argentina?",
+      "a5": "Por ahora solo despachamos dentro de Chile. Estamos trabajando para expandir a Argentina pronto.",
+      "q6": "¿Tienen garantía?",
+      "a6": "12 meses de garantía cubriendo defectos de fabricación. Cubre piezas y reemplazo en caso de fallas estructurales del mueble."
+    }
+  },
+
+  "Contact": {
+    "title": "Hablemos.",
+    "subtitle": "¿Tienes una pregunta sobre tu Campero ideal? Escribinos.",
+    "form": {
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@correo.cl",
+      "subjectLabel": "Asunto",
+      "subjectOptions": {
+        "general": "Consulta general",
+        "product": "Sobre un producto",
+        "support": "Soporte postventa",
+        "other": "Otro"
+      },
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Contanos en qué te podemos ayudar…",
+      "submit": "Enviar mensaje →",
+      "submitting": "Enviando…",
+      "errors": {
+        "nameRequired": "Ingresa tu nombre",
+        "emailInvalid": "Ingresa un correo válido",
+        "messageShort": "El mensaje es muy corto (mínimo 10 caracteres)",
+        "submitFailed": "No pudimos enviar tu mensaje. Reintentá o escribinos directo a hola@camperooverland.cl",
+        "backendUnavailable": "Por ahora el formulario no está disponible. Escribinos directo a hola@camperooverland.cl"
+      },
+      "success": {
+        "title": "Mensaje enviado.",
+        "body": "Te respondemos en un plazo máximo de 48 horas hábiles."
+      }
+    },
+    "alternatives": {
+      "title": "Otros canales",
+      "whatsappLabel": "WhatsApp Business",
+      "whatsappValue": "+56 9 XXXX XXXX",
+      "emailLabel": "Email",
+      "emailValue": "hola@camperooverland.cl",
+      "locationLabel": "Ubicación",
+      "locationValue": "Pucón, Chile",
+      "visitsNote": "Visitas con cita previa"
+    }
+  },
+
+  "Confirmation": {
+    "success": {
+      "title": "¡Tu Campero está en producción!",
+      "subtitle": "Recibimos tu pago y comenzamos a fabricar.",
+      "emailLine": "Te enviamos un email a {email} con el detalle de tu pedido y el código de seguimiento.",
+      "productionLine": "Tiempo estimado de fabricación: 15 días hábiles.",
+      "shippingLine": "Tiempo de envío: 3-7 días hábiles según comuna.",
+      "backHome": "Volver al inicio"
+    },
+    "failure": {
+      "title": "Algo no salió bien.",
+      "body": "Tu pago no se completó. Puedes intentar nuevamente o contactarnos.",
+      "retry": "Reintentar pago",
+      "support": "Contactar soporte"
+    }
+  },
+
+  "Emails": {
+    "orderConfirmation": {
+      "subject": "¡Tu Campero está en producción! Pedido #{id}",
+      "greeting": "Hola {name},",
+      "body": "Gracias por elegir Campero Overland. Acabamos de recibir tu pedido y comenzamos a fabricar tu {model} en {material}.",
+      "summaryHeading": "Resumen",
+      "nextStepsHeading": "Próximos pasos",
+      "step1": "Fabricación: 15 días hábiles",
+      "step2": "Te avisamos cuando esté listo",
+      "step3": "Envío: 3-7 días hábiles"
+    },
+    "readyToShip": {
+      "subject": "Tu Campero está listo. ¡Vamos a despacharlo!"
+    },
+    "shipped": {
+      "subject": "Tu Campero está en camino · Código de seguimiento: {tracking}"
+    },
+    "delivered": {
+      "subject": "¿Cómo armaste tu Campero? Cuéntanos."
+    }
+  }
+}

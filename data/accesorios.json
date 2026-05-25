@@ -1,0 +1,151 @@
+{
+  "_comment": "Accesorios opcionales del configurador. Cada accesorio tiene variantes por tamaño. Marca y modelo reales para los electrónicos (Alpicool, EcoFlow); bidones con bomba genéricos. Precios en CLP. addWeight/addVolume es lo que suma al peso/volumen del bolso final del Campero.",
+  "groups": [
+    {
+      "id": "water",
+      "label": "BIDÓN CON BOMBA DE AGUA",
+      "description": "Bidones rígidos con bomba eléctrica USB integrada.",
+      "variants": [
+        {
+          "id": "water_6",
+          "size": "6 L",
+          "brand": "Bidón con bomba",
+          "model": "6 litros",
+          "fullName": "Bidón con bomba 6 L",
+          "longDescription": "Bidón rígido con bomba eléctrica USB integrada. Cabe en cualquier compartimento del módulo de agua.",
+          "price": { "amount": 50000, "currency": "CLP" },
+          "addWeight": 1.2,
+          "addVolume": 4
+        },
+        {
+          "id": "water_10",
+          "size": "10 L",
+          "brand": "Bidón con bomba",
+          "model": "10 litros",
+          "fullName": "Bidón con bomba 10 L",
+          "longDescription": "Capacidad media. Compatible con el módulo estándar de agua del Campero.",
+          "price": { "amount": 70000, "currency": "CLP" },
+          "addWeight": 1.8,
+          "addVolume": 6
+        },
+        {
+          "id": "water_19",
+          "size": "19 L",
+          "brand": "Bidón con bomba",
+          "model": "19 litros",
+          "fullName": "Bidón con bomba 19 L",
+          "longDescription": "Máxima autonomía. Cabe justo en el módulo grande de agua, ideal para viajes largos.",
+          "price": { "amount": 90000, "currency": "CLP" },
+          "addWeight": 2.8,
+          "addVolume": 10
+        }
+      ]
+    },
+    {
+      "id": "fridge",
+      "label": "REFRIGERACIÓN ENCHUFABLE",
+      "description": "Refrigeradores portátiles Alpicool, diseñados para auto, camper y camping.",
+      "supplier": "Volcano Trailer",
+      "variants": [
+        {
+          "id": "fridge_18",
+          "size": "18 L",
+          "brand": "Alpicool",
+          "model": "X18",
+          "fullName": "Alpicool X18 · 18 L",
+          "longDescription": "Diseñado para auto, camper y camping. Enfriamiento hasta -20 °C, control por App Bluetooth y puerto USB integrado.",
+          "specs": {
+            "capacity": "18 L",
+            "minTemp": "-20°C",
+            "voltage": "12/24 V DC, 110-220 V AC",
+            "noise": "45 dB",
+            "appControl": true,
+            "usbPort": true
+          },
+          "price": { "amount": 200000, "currency": "CLP" },
+          "addWeight": 9.0,
+          "addVolume": 22
+        },
+        {
+          "id": "fridge_25",
+          "size": "25 L",
+          "brand": "Alpicool",
+          "model": "X25",
+          "fullName": "Alpicool X25 · 25 L",
+          "longDescription": "Misma tecnología que el X18 pero con mayor capacidad. Enfriamiento hasta -20 °C, App Bluetooth y puerto USB.",
+          "specs": {
+            "capacity": "25 L",
+            "minTemp": "-20°C",
+            "voltage": "12/24 V DC, 110-220 V AC",
+            "noise": "45 dB",
+            "appControl": true,
+            "usbPort": true
+          },
+          "price": { "amount": 270000, "currency": "CLP" },
+          "addWeight": 12.0,
+          "addVolume": 28
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "label": "ESTACIÓN DE ENERGÍA",
+      "description": "Estaciones de energía portátiles EcoFlow, ideales para overland.",
+      "supplier": "Vantek",
+      "variants": [
+        {
+          "id": "power_300",
+          "size": "300 W",
+          "brand": "EcoFlow",
+          "model": "River 3",
+          "fullName": "EcoFlow River 3 · 300 W / 256 Wh",
+          "longDescription": "Provista con la función de disipación de calor X-GaNPower, el ruido es similar al de una biblioteca: apenas 30 dB a 0.5m. Máximo silencio de día y de noche, incluso en uso continuo.",
+          "specs": {
+            "power": "300 W",
+            "capacity": "256 Wh",
+            "noise": "30 dB",
+            "technology": "X-GaNPower"
+          },
+          "price": { "amount": 275000, "currency": "CLP" },
+          "addWeight": 3.5,
+          "addVolume": 6
+        },
+        {
+          "id": "power_600",
+          "size": "600 W",
+          "brand": "EcoFlow",
+          "model": "River 3 Plus",
+          "fullName": "EcoFlow River 3 Plus · 600 W / 286 Wh",
+          "longDescription": "Es una bestia en el campo de las estaciones de energía pequeñas: hasta 600 W de potencia nominal. Tecnología X-Boost se hace cargo de dispositivos de calefacción de 1200 W continuamente y alimenta el 90% de electrodomésticos. Con luz adicional incorporada.",
+          "specs": {
+            "power": "600 W",
+            "boost": "1200 W",
+            "capacity": "286 Wh",
+            "technology": "X-Boost",
+            "extras": ["luz LED integrada"]
+          },
+          "price": { "amount": 340000, "currency": "CLP" },
+          "addWeight": 4.7,
+          "addVolume": 8
+        },
+        {
+          "id": "power_800",
+          "size": "800 W",
+          "brand": "EcoFlow",
+          "model": "River 2 Pro",
+          "fullName": "EcoFlow River 2 Pro · 800 W / 768 Wh",
+          "longDescription": "Supera el estándar del sector en velocidad de carga: carga completa en 70 minutos, 5x más rápido que otras estaciones portátiles. Carga mientras haces las maletas, listo para viajes de última hora.",
+          "specs": {
+            "power": "800 W",
+            "capacity": "768 Wh",
+            "chargeTime": "70 min",
+            "comparison": "5x más rápido que la competencia"
+          },
+          "price": { "amount": 560000, "currency": "CLP" },
+          "addWeight": 7.8,
+          "addVolume": 14
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green-deep: #04342c;
+  --color-green-medium: #0f4632;
+  --color-green-light: #1f4f38;
+  --color-green-accent: #0f5742;
+
+  --color-ochre: #b8763a;
+  --color-ochre-dark: #9f632f;
+  --color-ochre-soft: #f0e2cf;
+  --color-ochre-warm: #faeeda;
+
+  --color-cream: #faf7f0;
+  --color-cream-pure: #ffffff;
+
+  --color-ink: #1a1d17;
+  --color-ink-soft: #5f5e5a;
+  --color-ink-mute: #8a8a82;
+
+  --color-line: #d9d4c5;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
+}
+
+/* Chevron rotation cuando un <details> está abierto. Aplicar la
+   clase `details-chevron` al icono dentro de un <details>. */
+details[open] .details-chevron {
+  transform: rotate(180deg);
+}

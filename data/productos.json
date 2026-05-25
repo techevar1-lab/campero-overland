@@ -1,0 +1,131 @@
+{
+  "_comment": "Productos base de Campero Overland. Cada SKU corresponde a una combinación vehículo + modo de uso. Precios en CLP. Peso en kg, volumen en litros (medidos como volumen del bolso de transporte cuando está desarmado).",
+  "products": [
+    {
+      "id": "j3_org",
+      "slug": "jimny-3p-organizador",
+      "title": "Campero Jimny 3p - Organizador",
+      "shortTitle": "Jimny 3 puertas",
+      "subtitle": "Organizador",
+      "vehicle": "jimny3",
+      "use": "outside",
+      "hasBed": false,
+      "description": "Sistema modular completo sin cama. Cocina, almacenamiento y energía en su lugar.",
+      "price": { "amount": 490000, "currency": "CLP" },
+      "baseWeight": 18,
+      "baseVolume": 65,
+      "dimensions": {
+        "assembled": { "length": 110, "width": 95, "height": 65, "unit": "cm" },
+        "bag": { "length": 75, "width": 50, "height": 25, "unit": "cm" }
+      },
+      "loadCapacity": { "amount": 80, "unit": "kg" }
+    },
+    {
+      "id": "j3_cama1",
+      "slug": "jimny-3p-cama-1p",
+      "title": "Campero Jimny 3p - Cama 1 plaza",
+      "shortTitle": "Jimny 3 puertas",
+      "subtitle": "Org + cama 1p",
+      "vehicle": "jimny3",
+      "use": "inside",
+      "hasBed": true,
+      "description": "Organizador + cama plegable para una persona.",
+      "price": { "amount": 690000, "currency": "CLP" },
+      "baseWeight": 26,
+      "baseVolume": 92,
+      "dimensions": {
+        "assembled": { "length": 110, "width": 95, "height": 65, "unit": "cm" },
+        "bed": { "length": 190, "width": 70, "height": 5, "unit": "cm" },
+        "bag": { "length": 95, "width": 50, "height": 30, "unit": "cm" }
+      },
+      "loadCapacity": { "amount": 120, "unit": "kg" }
+    },
+    {
+      "id": "j5_org",
+      "slug": "jimny-5p-organizador",
+      "title": "Campero Jimny 5p - Organizador",
+      "shortTitle": "Jimny 5 puertas",
+      "subtitle": "Organizador",
+      "vehicle": "jimny5",
+      "use": "outside",
+      "hasBed": false,
+      "description": "Sistema modular completo para el Jimny 5p, sin cama.",
+      "price": { "amount": 560000, "currency": "CLP" },
+      "baseWeight": 22,
+      "baseVolume": 75,
+      "dimensions": {
+        "assembled": { "length": 130, "width": 105, "height": 65, "unit": "cm" },
+        "bag": { "length": 85, "width": 55, "height": 28, "unit": "cm" }
+      },
+      "loadCapacity": { "amount": 90, "unit": "kg" }
+    },
+    {
+      "id": "j5_cama2",
+      "slug": "jimny-5p-cama-2p",
+      "title": "Campero Jimny 5p - Cama 2 plazas",
+      "shortTitle": "Jimny 5 puertas",
+      "subtitle": "Org + cama 2p",
+      "vehicle": "jimny5",
+      "use": "inside",
+      "hasBed": true,
+      "description": "Organizador + cama plegable para dos personas.",
+      "price": { "amount": 890000, "currency": "CLP" },
+      "baseWeight": 34,
+      "baseVolume": 110,
+      "dimensions": {
+        "assembled": { "length": 130, "width": 105, "height": 65, "unit": "cm" },
+        "bed": { "length": 190, "width": 130, "height": 5, "unit": "cm" },
+        "bag": { "length": 105, "width": 60, "height": 35, "unit": "cm" }
+      },
+      "loadCapacity": { "amount": 180, "unit": "kg" }
+    },
+    {
+      "id": "go_org",
+      "slug": "campero-go-universal",
+      "title": "Campero Go - Universal",
+      "shortTitle": "Campero Go",
+      "subtitle": "Organizador",
+      "vehicle": "other",
+      "use": "outside",
+      "hasBed": false,
+      "description": "Mueble portátil sin cama. Encaja en cualquier SUV o pick-up.",
+      "price": { "amount": 420000, "currency": "CLP" },
+      "baseWeight": 16,
+      "baseVolume": 58,
+      "dimensions": {
+        "assembled": { "length": 100, "width": 90, "height": 60, "unit": "cm" },
+        "bag": { "length": 70, "width": 50, "height": 25, "unit": "cm" }
+      },
+      "loadCapacity": { "amount": 70, "unit": "kg" }
+    },
+    {
+      "id": "go_cama",
+      "slug": "campero-go-con-cama",
+      "title": "Campero Go - Universal con cama",
+      "shortTitle": "Campero Go",
+      "subtitle": "Con cama",
+      "vehicle": "other",
+      "use": "inside",
+      "hasBed": true,
+      "description": "Sistema portátil con cama plegable. Adaptable a SUV/pick-up.",
+      "price": { "amount": 650000, "currency": "CLP" },
+      "baseWeight": 24,
+      "baseVolume": 85,
+      "dimensions": {
+        "assembled": { "length": 100, "width": 90, "height": 60, "unit": "cm" },
+        "bed": { "length": 185, "width": 75, "height": 5, "unit": "cm" },
+        "bag": { "length": 90, "width": 55, "height": 30, "unit": "cm" }
+      },
+      "loadCapacity": { "amount": 110, "unit": "kg" }
+    }
+  ],
+  "_modelsByPath": {
+    "_comment": "Lookup helper para el configurador: dado vehicle + use, qué productos mostrar",
+    "jimny3_outside": ["j3_org"],
+    "jimny3_inside": ["j3_cama1"],
+    "jimny5_outside": ["j5_org"],
+    "jimny5_inside": ["j5_cama2"],
+    "other_outside": ["go_org"],
+    "other_inside": ["go_cama"]
+  }
+}
