@@ -28,6 +28,9 @@ export function mpClient(): MercadoPagoConfig {
  * Verifica la firma HMAC del webhook según docs de MP.
  * Header esperado: `x-signature: ts=...,v1=...`
  * Manifest: `id:{dataId};request-id:{requestId};ts:{ts};`
+ *
+ * Importante: `dataId` se convierte a lowercase porque MP a veces envía
+ * IDs con mayúsculas pero firma sobre lowercase (causa frecuente de 401).
  */
 export function verifyMpSignature({
   signatureHeader,
@@ -43,18 +46,48 @@ export function verifyMpSignature({
   const parts = signatureHeader.split(",").map((s) => s.trim());
   const ts = parts.find((p) => p.startsWith("ts="))?.slice(3);
   const hash = parts.find((p) => p.startsWith("v1="))?.slice(3);
-  if (!ts || !hash) return false;
 
-  const manifest = `id:${dataId};request-id:${requestId};ts:${ts};`;
+  // Log temporal para diagnóstico de 401s. Quitar después de validar.
+  const log = {
+    hasSignatureHeader: Boolean(signatureHeader),
+    hasTs: Boolean(ts),
+    hasHash: Boolean(hash),
+    receivedHashPrefix: hash?.slice(0, 12),
+    receivedHashLength: hash?.length,
+    dataIdRaw: dataId,
+    dataIdLowercased: String(dataId).toLowerCase(),
+    requestId,
+    ts,
+    secretLength: secret?.length ?? 0,
+    secretFirst4: secret?.slice(0, 4),
+  };
+
+  if (!ts || !hash) {
+    console.warn("[mp.verifySignature] missing parts", log);
+    return false;
+  }
+
+  const manifest = `id:${String(dataId).toLowerCase()};request-id:${requestId};ts:${ts};`;
   const expected = crypto
     .createHmac("sha256", secret)
     .update(manifest)
     .digest("hex");
 
-  // Comparación timing-safe
-  if (expected.length !== hash.length) return false;
-  return crypto.timingSafeEqual(
-    Buffer.from(expected, "hex"),
-    Buffer.from(hash, "hex"),
-  );
+  const match =
+    expected.length === hash.length &&
+    crypto.timingSafeEqual(
+      Buffer.from(expected, "hex"),
+      Buffer.from(hash, "hex"),
+    );
+
+  if (!match) {
+    console.warn("[mp.verifySignature] mismatch", {
+      ...log,
+      manifest,
+      expectedPrefix: expected.slice(0, 12),
+      expectedLength: expected.length,
+    });
+  }
+
+  return match;
 }
