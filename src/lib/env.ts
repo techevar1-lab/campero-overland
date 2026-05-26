@@ -19,7 +19,9 @@ const SupabaseEnv = z.object({
 const MercadoPagoEnv = z.object({
   MERCADOPAGO_ACCESS_TOKEN: z.string().min(1),
   MERCADOPAGO_PUBLIC_KEY: z.string().min(1),
-  MERCADOPAGO_WEBHOOK_SECRET: z.string().min(1),
+  // MERCADOPAGO_WEBHOOK_SECRET ya no es requerido: el webhook usa
+  // fetch-based validation en lugar de HMAC. Si en el futuro se
+  // restablece la verificación HMAC, agregar acá nuevamente.
 });
 
 const ResendEnv = z.object({
