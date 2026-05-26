@@ -27,10 +27,10 @@ export function mpClient(): MercadoPagoConfig {
 /**
  * Verifica la firma HMAC del webhook según docs de MP.
  * Header esperado: `x-signature: ts=...,v1=...`
- * Manifest: `id:{dataId};request-id:{requestId};ts:{ts};`
  *
- * Importante: `dataId` se convierte a lowercase porque MP a veces envía
- * IDs con mayúsculas pero firma sobre lowercase (causa frecuente de 401).
+ * Prueba múltiples variantes del manifest hasta que alguna matchee.
+ * Loggea cuál variante fue la ganadora (si alguna lo es) para que
+ * podamos consolidar la implementación.
  */
 export function verifyMpSignature({
   signatureHeader,
@@ -47,47 +47,80 @@ export function verifyMpSignature({
   const ts = parts.find((p) => p.startsWith("ts="))?.slice(3);
   const hash = parts.find((p) => p.startsWith("v1="))?.slice(3);
 
-  // Log temporal para diagnóstico de 401s. Quitar después de validar.
-  const log = {
-    hasSignatureHeader: Boolean(signatureHeader),
-    hasTs: Boolean(ts),
-    hasHash: Boolean(hash),
-    receivedHashPrefix: hash?.slice(0, 12),
-    receivedHashLength: hash?.length,
-    dataIdRaw: dataId,
-    dataIdLowercased: String(dataId).toLowerCase(),
-    requestId,
-    ts,
-    secretLength: secret?.length ?? 0,
-    secretFirst4: secret?.slice(0, 4),
-  };
-
   if (!ts || !hash) {
-    console.warn("[mp.verifySignature] missing parts", log);
+    console.warn("[mp.verifySignature] missing parts", {
+      hasSignatureHeader: Boolean(signatureHeader),
+      hasTs: Boolean(ts),
+      hasHash: Boolean(hash),
+    });
     return false;
   }
 
-  const manifest = `id:${String(dataId).toLowerCase()};request-id:${requestId};ts:${ts};`;
-  const expected = crypto
-    .createHmac("sha256", secret)
-    .update(manifest)
-    .digest("hex");
+  const dataIdLower = String(dataId).toLowerCase();
+  const dataIdRaw = String(dataId);
 
-  const match =
-    expected.length === hash.length &&
-    crypto.timingSafeEqual(
-      Buffer.from(expected, "hex"),
-      Buffer.from(hash, "hex"),
-    );
+  // Catálogo de variantes a probar.
+  const variants: Array<{ name: string; manifest: string }> = [
+    {
+      name: "lowercase+trailing-semi",
+      manifest: `id:${dataIdLower};request-id:${requestId};ts:${ts};`,
+    },
+    {
+      name: "lowercase+no-trailing-semi",
+      manifest: `id:${dataIdLower};request-id:${requestId};ts:${ts}`,
+    },
+    {
+      name: "raw+trailing-semi",
+      manifest: `id:${dataIdRaw};request-id:${requestId};ts:${ts};`,
+    },
+    {
+      name: "raw+no-trailing-semi",
+      manifest: `id:${dataIdRaw};request-id:${requestId};ts:${ts}`,
+    },
+  ];
 
-  if (!match) {
-    console.warn("[mp.verifySignature] mismatch", {
-      ...log,
-      manifest,
-      expectedPrefix: expected.slice(0, 12),
-      expectedLength: expected.length,
-    });
+  for (const variant of variants) {
+    const expected = crypto
+      .createHmac("sha256", secret)
+      .update(variant.manifest)
+      .digest("hex");
+
+    if (
+      expected.length === hash.length &&
+      crypto.timingSafeEqual(
+        Buffer.from(expected, "hex"),
+        Buffer.from(hash, "hex"),
+      )
+    ) {
+      console.log("[mp.verifySignature] MATCH", {
+        winningVariant: variant.name,
+        manifest: variant.manifest,
+      });
+      return true;
+    }
   }
 
-  return match;
+  // Ninguna variante matcheó: log detallado.
+  console.warn("[mp.verifySignature] NO match (probadas 4 variantes)", {
+    receivedHashPrefix: hash.slice(0, 12),
+    receivedHashLength: hash.length,
+    dataIdRaw,
+    dataIdLower,
+    requestId,
+    ts,
+    secretLength: secret.length,
+    secretFirst4: secret.slice(0, 4),
+    secretLast4: secret.slice(-4),
+    expectedPerVariant: variants.map((v) => ({
+      name: v.name,
+      manifest: v.manifest,
+      expected: crypto
+        .createHmac("sha256", secret)
+        .update(v.manifest)
+        .digest("hex")
+        .slice(0, 12),
+    })),
+  });
+
+  return false;
 }
