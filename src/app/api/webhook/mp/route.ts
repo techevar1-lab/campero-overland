@@ -10,7 +10,7 @@ import type {
   Vehicle,
 } from "@/lib/configurator/types";
 import { readEnv, siteUrl } from "@/lib/env";
-import { mpClient, verifyMpSignature } from "@/lib/mercadopago";
+import { mpClient } from "@/lib/mercadopago";
 import { resendClient } from "@/lib/resend";
 import { createServiceClient } from "@/lib/supabase/service";
 
@@ -26,15 +26,21 @@ type ConfigurationRow = {
 
 /**
  * Webhook de MercadoPago. MP envía notificaciones a esta URL cuando
- * cambia el estado de un pago. CRÍTICO: validar la firma HMAC antes de
- * procesar el body.
+ * cambia el estado de un pago.
+ *
+ * Validación por fetch (en lugar de HMAC): cuando llega un webhook,
+ * consultamos el pago en la API de MP usando nuestro access token. Si
+ * MP devuelve el pago (200), es legítimo — solo nuestro token tiene
+ * permiso de leer pagos de nuestra cuenta. Si devuelve 404/401, lo
+ * descartamos.
+ *
+ * Esta estrategia es la alternativa documentada cuando la verificación
+ * HMAC no se puede usar (en este caso, MP firma con un secret distinto
+ * al que muestra el panel, por motivos que no logramos diagnosticar).
  *
  * Cuando el pago queda en `approved`:
  * 1. Inserta un registro en `orders` (idempotente por mp_payment_id)
  * 2. Envía email de confirmación con Resend
- *
- * Idempotencia: si el mismo mp_payment_id ya existe en orders, no
- * duplicamos el envío.
  */
 export async function POST(req: NextRequest) {
   const mpEnv = readEnv("mercadopago");
@@ -46,20 +52,9 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const signatureHeader = req.headers.get("x-signature");
-  const requestId = req.headers.get("x-request-id");
-  if (!signatureHeader || !requestId) {
-    return NextResponse.json(
-      { error: "missing_signature_headers" },
-      { status: 400 },
-    );
-  }
-
   let body: {
     type?: string;
     data?: { id?: string };
-    live_mode?: boolean;
-    user_id?: string | number;
     action?: string;
   };
   try {
@@ -71,24 +66,10 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const dataIdFromQuery = req.nextUrl.searchParams.get("data.id");
-  const dataIdFromBody = body?.data?.id;
-  const dataId = dataIdFromQuery ?? dataIdFromBody;
-
-  // Log temporal para diagnosticar mismatch de modo (test vs prod).
-  // Muestra primeros/últimos chars del access token sin filtrar todo.
-  console.log("[webhook] inspection", {
-    fromQuery: dataIdFromQuery,
-    fromBody: dataIdFromBody,
-    fullUrl: req.url,
-    bodyLiveMode: body.live_mode,
-    bodyUserId: body.user_id,
-    bodyAction: body.action,
-    bodyType: body.type,
-    accessTokenFirst10: mpEnv.data.MERCADOPAGO_ACCESS_TOKEN.slice(0, 10),
-    accessTokenLast4: mpEnv.data.MERCADOPAGO_ACCESS_TOKEN.slice(-4),
-    accessTokenLength: mpEnv.data.MERCADOPAGO_ACCESS_TOKEN.length,
-  });
+  // El `data.id` puede venir en query string o en body. Tomamos query
+  // primero (es el oficial según docs MP) con fallback al body.
+  const dataId =
+    req.nextUrl.searchParams.get("data.id") ?? body?.data?.id ?? null;
 
   if (!dataId) {
     return NextResponse.json(
@@ -97,23 +78,10 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const validSignature = verifyMpSignature({
-    signatureHeader,
-    requestId,
-    dataId,
-    secret: mpEnv.data.MERCADOPAGO_WEBHOOK_SECRET,
-  });
-  if (!validSignature) {
-    return NextResponse.json(
-      { error: "invalid_signature" },
-      { status: 401 },
-    );
-  }
-
   // Solo procesamos eventos de tipo "payment". MP también envía
   // notificaciones de merchant_order, plan, etc.
   if (body.type !== "payment") {
-    return NextResponse.json({ received: true });
+    return NextResponse.json({ received: true, ignored: body.type });
   }
 
   let payment;
