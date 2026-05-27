@@ -68,7 +68,7 @@
       "fichaTileAriaLabel": "Abrir ficha técnica de {brand}",
       "items": {
         "fridgeBrand": "Alpicool",
-        "fridgeVariants": "X18 · X25",
+        "fridgeVariants": "X18 · X30",
         "powerBrand": "EcoFlow",
         "powerVariants": "RIVER 3 · PLUS · PRO",
         "waterBrand": "Bidón + bomba",
@@ -195,6 +195,163 @@
       "compare10Value": "•••••",
       "compare19": "19 L — grupos · viaje largo",
       "compare19Value": "••••·",
+      "footerOrigin": "DISEÑADO EN LA PATAGONIA",
+      "footerBrand": "CAMPERO OVERLAND · 2026",
+      "footerTagline": "PLUG & PLAY · SIN TORNILLOS"
+    }
+  },
+
+  "FichaRefrigeracion": {
+    "modalAriaLabel": "Ficha técnica: sistema de refrigeración",
+    "brand": "CAMPERO OVERLAND",
+    "location": "PUCÓN · CHILE · 2026",
+    "title": "Sistema de Refrigeración",
+    "subtitle": "ALPICOOL X18 · X30",
+    "docTag": "DOC. TÉCNICO",
+    "rev": "REV. 01",
+    "tabsAriaLabel": "Secciones de la ficha técnica",
+    "tabs": {
+      "diagram": "Diagrama integración",
+      "compare": "Comparativa modelos",
+      "energy": "Consumo energético"
+    },
+    "diagram": {
+      "label": "VISTA ESQUEMÁTICA — CORTE LATERAL · COMPARTIMENTO REFRIGERACIÓN",
+      "titlePlain": "Integración en",
+      "titleEm": "mobiliario",
+      "legend": {
+        "cold": "Zona frío / interior",
+        "power": "Circuito 12V (EcoFlow)",
+        "rails": "Rieles ajustables ±25 mm",
+        "vent": "Salida ventilación compresor"
+      },
+      "noteTitle": "Integración clave",
+      "noteBody": "El cooler descansa sobre rieles ajustables laterales (±25 mm) que permiten acomodar tanto el X18 (33 cm ancho) como el X30 (37.4 cm). La alimentación 12V viene directamente desde el EcoFlow. El compresor inferior necesita al menos 50 mm de espacio libre hacia atrás para ventilación."
+    },
+    "compare": {
+      "label": "COMPARATIVA TÉCNICA — AMBOS MODELOS",
+      "titlePlain": "X18",
+      "titleEm": "vs X30",
+      "noteTitle": "Decisión de diseño pendiente",
+      "noteBody": "Los rieles ajustables permiten usar ambos modelos en el mismo compartimento, pero el X30 requiere 43 mm más de ancho. Hay que definir si el compartimento se dimensiona para el X30 (el mayor) y el X18 queda con riel ajustado, o si se fabrican dos versiones del mueble."
+    },
+    "energy": {
+      "label": "ESTIMACIÓN DE CONSUMO — ECOFLOW 800 Wh",
+      "titlePlain": "Autonomía",
+      "titleEm": "real del sistema",
+      "noteTitle": "Cálculo de autonomía",
+      "noteBody": "El compresor Alpicool no trabaja al 100% del tiempo: cicla según temperatura ambiente. En clima templado de Patagonia (~15–20 °C exterior) el compresor trabaja aprox. 30–40% del tiempo, reduciendo el consumo efectivo a ~10–15 Wh por hora. Con EcoFlow 800 Wh: ~50–80 horas de refrigeración continua sin recarga. Más que suficiente para 2–3 días entre campamentos con generación solar."
+    },
+    "sidebar": {
+      "modelLabel": "SELECCIONA MODELO",
+      "x18Litros": "18 L",
+      "x30Litros": "30 L",
+      "specsLabel": "FICHA TÉCNICA",
+      "capacidad": "Capacidad",
+      "largo": "Largo",
+      "ancho": "Ancho",
+      "alto": "Alto",
+      "pesoNeto": "Peso neto",
+      "consumoPico": "Consumo pico",
+      "tMinima": "T° mínima",
+      "bluetooth": "Bluetooth app",
+      "puertoUsb": "Puerto USB",
+      "portavasos": "Portavasos",
+      "compartLabel": "DIMENSIONES COMPARTIMENTO",
+      "cLargo": "LARGO",
+      "cAncho": "ANCHO",
+      "cAlto": "ALTO",
+      "cHolgura": "HOLGURA",
+      "cHolguraValue": "+40 mm largo",
+      "cVentil": "VENTIL.",
+      "cVentilValue": ">50 mm posterior",
+      "cRieles": "RIELES",
+      "cRielesValue": "±25 mm ajuste",
+      "pricesLabel": "PRECIO ADD-ON (CAMPERO)",
+      "priceX18": "REFRIGERACIÓN 18 L",
+      "priceX30": "REFRIGERACIÓN 30 L",
+      "chooseLabel": "¿CUÁL ELEGIR?",
+      "x18Body": "Ideal para 1–2 personas, viajes de hasta 5 días. Más compacto, menos peso. Cabe perfectamente en Jimny 3p.",
+      "x30Body": "Para 2–4 personas o viajes largos. Mayor autonomía de comida. Ocupa 43 mm más de ancho en el mueble.",
+      "footerOrigin": "DISEÑADO EN LA PATAGONIA",
+      "footerBrand": "CAMPERO OVERLAND · 2026",
+      "footerTagline": "PLUG & PLAY · SIN TORNILLOS"
+    }
+  },
+
+  "FichaEnergia": {
+    "modalAriaLabel": "Ficha técnica: sistema de energía",
+    "brand": "CAMPERO OVERLAND",
+    "location": "PUCÓN · CHILE · 2026",
+    "title": "Sistema de Energía",
+    "subtitle": "ECOFLOW RIVER 3 · 3 PLUS · 2 PRO",
+    "docTag": "DOC. TÉCNICO",
+    "rev": "REV. 01",
+    "tabsAriaLabel": "Secciones de la ficha técnica",
+    "tabs": {
+      "diagram": "Diagrama integración",
+      "compare": "Comparativa 3 modelos",
+      "autonomy": "Autonomía del sistema"
+    },
+    "diagram": {
+      "label": "VISTA ESQUEMÁTICA — CORTE LATERAL · COMPARTIMENTO ENERGÍA",
+      "titlePlain": "Integración en",
+      "titleEm": "mobiliario",
+      "legend": {
+        "dc12": "12V DC (cooler / auto)",
+        "usbA": "USB-A (bomba)",
+        "solarUsbC": "USB-C / Solar",
+        "ac220": "220V AC (laptop, cargadores)",
+        "active": "Estado activo"
+      },
+      "noteTitle": "Flujo del sistema",
+      "noteBody": "El EcoFlow es el hub central. Alimenta simultáneamente el cooler (12V DC), la bomba de agua (USB-A), luces (USB-C) y cualquier dispositivo 220V. Se recarga en ruta vía encendedor del vehículo y en campamento vía panel solar externo."
+    },
+    "compare": {
+      "label": "COMPARATIVA TÉCNICA — 3 MODELOS ECOFLOW",
+      "titlePlain": "River 3 ·",
+      "titleEm": "Plus · 2 Pro",
+      "noteTitle": "Decisión de diseño",
+      "noteBody": "Los tres modelos tienen distinto alto (113 / 146 / 226 mm). El compartimento se dimensiona para el River 2 Pro (el mayor) con rieles o corral ajustable, o se definen tres versiones de mueble. El ancho es similar (212–260 mm), manejable con un mismo corral."
+    },
+    "autonomy": {
+      "label": "ESTIMACIÓN CONSUMO DEL SISTEMA COMPLETO",
+      "titlePlain": "Autonomía",
+      "titleEm": "real por modelo",
+      "noteTitle": "Recomendación para Campero",
+      "noteBody": "Con panel solar de 110–220W conectado, cualquiera de los tres modelos se vuelve autónomo indefinidamente en días soleados. Para viajes de 3–7 días sin solar el River 3 Plus es suficiente. Para expediciones largas (Carretera Austral, Patagonia) sin generación solar garantizada, el River 2 Pro da tranquilidad total con ~22 días de autonomía."
+    },
+    "sidebar": {
+      "modelLabel": "SELECCIONA MODELO",
+      "specsLabel": "FICHA TÉCNICA",
+      "capacity": "Capacidad",
+      "power": "Potencia nominal",
+      "boost": "X-Boost",
+      "length": "Largo",
+      "width": "Ancho",
+      "height": "Alto",
+      "weight": "Peso",
+      "noise": "Ruido",
+      "acOut": "AC salida",
+      "expandable": "Ampliable",
+      "ip": "IP / drops",
+      "cert": "Certificación",
+      "compartLabel": "DIMENSIONES COMPARTIMENTO",
+      "cLength": "LARGO",
+      "cDepth": "PROFUND.",
+      "cHeight": "ALTO",
+      "cClearance": "HOLGURA",
+      "cClearanceValue": "+40 mm largo",
+      "cVent": "VENTIL.",
+      "cVentValue": ">30 mm lateral",
+      "pricesLabel": "PRECIO ADD-ON (CAMPERO)",
+      "priceR3": "ENERGÍA 300W / 256 Wh",
+      "priceR3p": "ENERGÍA 600W / 286 Wh",
+      "priceR2p": "ENERGÍA 800W / 768 Wh",
+      "chooseLabel": "¿CUÁL ELEGIR?",
+      "r3Body": "Viajes cortos ≤7 días con solar. Más liviano, menor costo. Ideal para Jimny con espacio ajustado.",
+      "r3pBody": "El sweet spot. Ampliable si se necesita. 3× AC, doble potencia. Mejor relación costo-capacidad.",
+      "r2pBody": "Máxima autonomía. Para Patagonia larga sin solar garantizado. Cert. TÜV Rheinland.",
       "footerOrigin": "DISEÑADO EN LA PATAGONIA",
       "footerBrand": "CAMPERO OVERLAND · 2026",
       "footerTagline": "PLUG & PLAY · SIN TORNILLOS"

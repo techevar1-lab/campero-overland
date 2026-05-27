@@ -60,30 +60,37 @@
             "voltage": "12/24 V DC, 110-220 V AC",
             "noise": "45 dB",
             "appControl": true,
-            "usbPort": true
+            "usbPort": true,
+            "dimensions": "600 × 330 × 320 mm",
+            "weight": "10.5 kg",
+            "powerPeak": "35 W"
           },
-          "price": { "amount": 200000, "currency": "CLP" },
-          "addWeight": 9.0,
+          "price": { "amount": 220000, "currency": "CLP" },
+          "addWeight": 10.5,
           "addVolume": 22
         },
         {
-          "id": "fridge_25",
-          "size": "25 L",
+          "id": "fridge_30",
+          "size": "30 L",
           "brand": "Alpicool",
-          "model": "X25",
-          "fullName": "Alpicool X25 · 25 L",
-          "longDescription": "Misma tecnología que el X18 pero con mayor capacidad. Enfriamiento hasta -20 °C, App Bluetooth y puerto USB.",
+          "model": "X30",
+          "fullName": "Alpicool X30 · 30 L",
+          "longDescription": "Mayor capacidad para 2–4 personas o viajes largos. Misma tecnología que el X18: enfriamiento hasta -20 °C, App Bluetooth y puerto USB. Suma portavasos integrados.",
           "specs": {
-            "capacity": "25 L",
+            "capacity": "30 L",
             "minTemp": "-20°C",
             "voltage": "12/24 V DC, 110-220 V AC",
             "noise": "45 dB",
             "appControl": true,
-            "usbPort": true
+            "usbPort": true,
+            "cupHolders": 2,
+            "dimensions": "603 × 374 × 372 mm",
+            "weight": "13 kg estimado",
+            "powerPeak": "35 W"
           },
-          "price": { "amount": 270000, "currency": "CLP" },
-          "addWeight": 12.0,
-          "addVolume": 28
+          "price": { "amount": 280000, "currency": "CLP" },
+          "addWeight": 13.0,
+          "addVolume": 32
         }
       ]
     },

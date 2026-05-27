@@ -5,6 +5,8 @@ import { useTranslations } from "next-intl";
 import { useState, type ReactNode } from "react";
 import { FichaTecnicaModal } from "@/components/complements/FichaTecnicaModal";
 import { FichaAgua } from "@/components/complements/fichas/FichaAgua";
+import { FichaEnergia } from "@/components/complements/fichas/FichaEnergia";
+import { FichaRefrigeracion } from "@/components/complements/fichas/FichaRefrigeracion";
 import accesoriosData from "@data/accesorios.json";
 import { formatPrice, type Price } from "@/lib/format";
 
@@ -146,6 +148,8 @@ function VariantList({ groupId }: { groupId: GroupId }) {
 export function Complements() {
   const t = useTranslations("HomePage.Complements");
   const tFicha = useTranslations("FichaAgua");
+  const tFichaR = useTranslations("FichaRefrigeracion");
+  const tFichaE = useTranslations("FichaEnergia");
   const [activeGroup, setActiveGroup] = useState<GroupId | null>(null);
   const [openFicha, setOpenFicha] = useState<FichaId | null>(null);
 
@@ -162,12 +166,14 @@ export function Complements() {
       icon: <Refrigerator aria-hidden {...iconProps} />,
       brand: t("items.fridgeBrand"),
       variants: t("items.fridgeVariants"),
+      ficha: "fridge",
     },
     {
       kind: "brand",
       icon: <Zap aria-hidden {...iconProps} />,
       brand: t("items.powerBrand"),
       variants: t("items.powerVariants"),
+      ficha: "power",
     },
     {
       kind: "brand",
@@ -272,6 +278,20 @@ export function Complements() {
         ariaLabel={tFicha("modalAriaLabel")}
       >
         <FichaAgua />
+      </FichaTecnicaModal>
+      <FichaTecnicaModal
+        open={openFicha === "fridge"}
+        onClose={() => setOpenFicha(null)}
+        ariaLabel={tFichaR("modalAriaLabel")}
+      >
+        <FichaRefrigeracion />
+      </FichaTecnicaModal>
+      <FichaTecnicaModal
+        open={openFicha === "power"}
+        onClose={() => setOpenFicha(null)}
+        ariaLabel={tFichaE("modalAriaLabel")}
+      >
+        <FichaEnergia />
       </FichaTecnicaModal>
     </section>
   );
