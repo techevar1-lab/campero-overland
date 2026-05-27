@@ -65,7 +65,7 @@
       "tagEnergy": "ENERGÍA",
       "tagWater": "AGUA",
       "chipsAriaLabel": "Categorías de complementos disponibles",
-      "fichaCta": "Ver ficha →",
+      "fichaTileAriaLabel": "Abrir ficha técnica de {brand}",
       "items": {
         "fridgeBrand": "Alpicool",
         "fridgeVariants": "X18 · X25",

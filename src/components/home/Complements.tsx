@@ -48,29 +48,41 @@ type Tile =
 function Tile({
   tile,
   onOpenFicha,
-  fichaCtaLabel,
+  fichaAriaLabel,
 }: {
   tile: Tile;
   onOpenFicha?: (id: FichaId) => void;
-  fichaCtaLabel: string;
+  fichaAriaLabel?: string;
 }) {
-  const iconBoxBg =
-    tile.kind === "ready" ? "bg-green-deep" : "bg-ochre-warm";
+  const isInteractive =
+    tile.kind === "brand" && Boolean(tile.ficha) && Boolean(onOpenFicha);
+
+  const iconBoxBase =
+    tile.kind === "ready"
+      ? "bg-green-deep"
+      : isInteractive
+        ? "bg-ochre-warm transition-colors group-hover:bg-ochre/20"
+        : "bg-ochre-warm";
+
   const primaryLabel = tile.kind === "ready" ? null : tile.brand;
   const secondaryLabel =
     tile.kind === "ready" ? tile.label : tile.variants;
   const secondaryColor =
     tile.kind === "ready" ? "text-green-deep" : "text-ink-soft";
 
+  const primaryColor = isInteractive
+    ? "text-green-deep transition-colors group-hover:text-ochre"
+    : "text-green-deep";
+
   const inner = (
     <>
       <div
-        className={`mb-2 flex aspect-square items-center justify-center rounded-[4px] ${iconBoxBg}`}
+        className={`mb-2 flex aspect-square items-center justify-center rounded-[4px] ${iconBoxBase}`}
       >
         {tile.icon}
       </div>
       <p
-        className="font-serif text-[13px] text-green-deep"
+        className={`font-serif text-[13px] ${primaryColor}`}
         aria-hidden={primaryLabel === null}
       >
         {primaryLabel ?? " "}
@@ -83,17 +95,16 @@ function Tile({
     </>
   );
 
-  if (tile.kind === "brand" && tile.ficha && onOpenFicha) {
+  if (isInteractive) {
     return (
       <button
         type="button"
-        onClick={() => onOpenFicha(tile.ficha as FichaId)}
-        className="group flex flex-col text-center transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-ochre"
+        aria-label={fichaAriaLabel}
+        aria-haspopup="dialog"
+        onClick={() => onOpenFicha?.(tile.ficha as FichaId)}
+        className="group flex cursor-pointer flex-col text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ochre"
       >
         {inner}
-        <span className="mt-1 font-mono text-[9px] uppercase tracking-[1px] text-ochre transition-colors group-hover:text-ochre-dark">
-          {fichaCtaLabel}
-        </span>
       </button>
     );
   }
@@ -244,7 +255,11 @@ export function Complements() {
                 key={i}
                 tile={tile}
                 onOpenFicha={setOpenFicha}
-                fichaCtaLabel={t("fichaCta")}
+                fichaAriaLabel={
+                  tile.kind === "brand" && tile.ficha
+                    ? t("fichaTileAriaLabel", { brand: tile.brand })
+                    : undefined
+                }
               />
             ))}
           </div>
