@@ -3,8 +3,12 @@
 import { Check, Droplet, Refrigerator, Zap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState, type ReactNode } from "react";
+import { FichaTecnicaModal } from "@/components/complements/FichaTecnicaModal";
+import { FichaAgua } from "@/components/complements/fichas/FichaAgua";
 import accesoriosData from "@data/accesorios.json";
 import { formatPrice, type Price } from "@/lib/format";
+
+type FichaId = "water" | "fridge" | "power";
 
 type GroupId = "fridge" | "power" | "water";
 
@@ -32,10 +36,24 @@ type AccesoriosData = {
 const data = accesoriosData as unknown as AccesoriosData;
 
 type Tile =
-  | { kind: "brand"; icon: ReactNode; brand: string; variants: string }
+  | {
+      kind: "brand";
+      icon: ReactNode;
+      brand: string;
+      variants: string;
+      ficha?: FichaId;
+    }
   | { kind: "ready"; icon: ReactNode; label: string };
 
-function Tile({ tile }: { tile: Tile }) {
+function Tile({
+  tile,
+  onOpenFicha,
+  fichaCtaLabel,
+}: {
+  tile: Tile;
+  onOpenFicha?: (id: FichaId) => void;
+  fichaCtaLabel: string;
+}) {
   const iconBoxBg =
     tile.kind === "ready" ? "bg-green-deep" : "bg-ochre-warm";
   const primaryLabel = tile.kind === "ready" ? null : tile.brand;
@@ -44,8 +62,8 @@ function Tile({ tile }: { tile: Tile }) {
   const secondaryColor =
     tile.kind === "ready" ? "text-green-deep" : "text-ink-soft";
 
-  return (
-    <div className="text-center">
+  const inner = (
+    <>
       <div
         className={`mb-2 flex aspect-square items-center justify-center rounded-[4px] ${iconBoxBg}`}
       >
@@ -62,8 +80,25 @@ function Tile({ tile }: { tile: Tile }) {
       >
         {secondaryLabel}
       </p>
-    </div>
+    </>
   );
+
+  if (tile.kind === "brand" && tile.ficha && onOpenFicha) {
+    return (
+      <button
+        type="button"
+        onClick={() => onOpenFicha(tile.ficha as FichaId)}
+        className="group flex flex-col text-center transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-ochre"
+      >
+        {inner}
+        <span className="mt-1 font-mono text-[9px] uppercase tracking-[1px] text-ochre transition-colors group-hover:text-ochre-dark">
+          {fichaCtaLabel}
+        </span>
+      </button>
+    );
+  }
+
+  return <div className="text-center">{inner}</div>;
 }
 
 function getVariants(groupId: GroupId): Variant[] {
@@ -99,7 +134,9 @@ function VariantList({ groupId }: { groupId: GroupId }) {
 
 export function Complements() {
   const t = useTranslations("HomePage.Complements");
+  const tFicha = useTranslations("FichaAgua");
   const [activeGroup, setActiveGroup] = useState<GroupId | null>(null);
+  const [openFicha, setOpenFicha] = useState<FichaId | null>(null);
 
   const iconProps = {
     width: 44,
@@ -126,6 +163,7 @@ export function Complements() {
       icon: <Droplet aria-hidden {...iconProps} />,
       brand: t("items.waterBrand"),
       variants: t("items.waterVariants"),
+      ficha: "water",
     },
     {
       kind: "ready",
@@ -202,11 +240,24 @@ export function Complements() {
         <div className="rounded-sm border-[0.5px] border-green-deep/15 bg-cream p-6">
           <div className="grid grid-cols-2 gap-4">
             {tiles.map((tile, i) => (
-              <Tile key={i} tile={tile} />
+              <Tile
+                key={i}
+                tile={tile}
+                onOpenFicha={setOpenFicha}
+                fichaCtaLabel={t("fichaCta")}
+              />
             ))}
           </div>
         </div>
       </div>
+
+      <FichaTecnicaModal
+        open={openFicha === "water"}
+        onClose={() => setOpenFicha(null)}
+        ariaLabel={tFicha("modalAriaLabel")}
+      >
+        <FichaAgua />
+      </FichaTecnicaModal>
     </section>
   );
 }
