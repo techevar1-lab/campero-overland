@@ -21,7 +21,7 @@ type ConfiguratorState = {
   material: "recycled" | "birch";  // default "recycled"
   addons: {
     water: string | null;   // "water_6" | "water_10" | "water_19" | null
-    fridge: string | null;  // "fridge_18" | "fridge_25" | null
+    fridge: string | null;  // "fridge_18" | "fridge_30" | null
     power: string | null;   // "power_300" | "power_600" | "power_800" | null
   };
   email: string;
@@ -116,8 +116,8 @@ Cada modelo se muestra como una tarjeta seleccionable (en V1 solo hay 1 modelo p
 - 19 L — Bidón con bomba — $90.000 — peso +2.8 kg, volumen +10 L
 
 ### Refrigeración enchufable
-- 18 L — Alpicool X18 — $200.000 — peso +9.0 kg, volumen +22 L
-- 25 L — Alpicool X25 — $270.000 — peso +12.0 kg, volumen +28 L
+- 18 L — Alpicool X18 — $220.000 — peso +10.5 kg, volumen +22 L
+- 30 L — Alpicool X30 — $280.000 — peso +13.0 kg, volumen +32 L
 
 ### Estación de energía
 - 300 W — EcoFlow River 3 — $275.000 — peso +3.5 kg, volumen +6 L

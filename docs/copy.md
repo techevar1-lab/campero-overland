@@ -104,7 +104,7 @@ Carrusel de imágenes (3-5 por producto cuando estén las fotos reales).
 - Volumen del bolso: X litros
 - Capacidad de carga: X kg
 - Materiales disponibles: Plástico reciclado o Terciado de abedul
-- Compatibilidad accesorios: Refrigeración hasta 25L · Energía hasta 800W · Bidón hasta 19L
+- Compatibilidad accesorios: Refrigeración hasta 30L · Energía hasta 800W · Bidón hasta 19L
 
 ### Sección "Cómo funciona"
 3 pasos cortos:

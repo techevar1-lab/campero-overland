@@ -59,7 +59,7 @@ E-commerce + configurador interactivo para venta de mobiliario portátil de camp
 
 **Materiales**: 2 opciones. Terciado de abedul báltico es la versión premium estándar (precio listado en productos.json). Plástico reciclado PET/HDPE es el default sustentable: −20% en el mueble (no afecta accesorios), −30% en peso.
 
-**Accesorios opcionales**: refrigeración (Alpicool X18/X25), energía (EcoFlow River 3/Plus/Pro), bidón con bomba (6L/10L/19L). Cada producto tiene compartimentos dimensionados para estos accesorios; si el cliente no los compra, el espacio queda libre.
+**Accesorios opcionales**: refrigeración (Alpicool X18/X30), energía (EcoFlow River 3/Plus/Pro), bidón con bomba (6L/10L/19L). Cada producto tiene compartimentos dimensionados para estos accesorios; si el cliente no los compra, el espacio queda libre.
 
 **Envío**: flat-rate $25.000 CLP a todo Chile.
 
