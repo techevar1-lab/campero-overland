@@ -64,6 +64,7 @@
       "tagRefrigeration": "REFRIGERACIÓN",
       "tagEnergy": "ENERGÍA",
       "tagWater": "AGUA",
+      "chipsAriaLabel": "Categorías de complementos disponibles",
       "items": {
         "fridgeBrand": "Alpicool",
         "fridgeVariants": "X18 · X25",
