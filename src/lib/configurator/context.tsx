@@ -11,7 +11,11 @@ import {
 } from "react";
 import { computeTotals, type ConfiguratorTotals } from "./calculations";
 import { canGoBack, canGoNext, configuratorReducer, initialState } from "./state";
-import { loadConfiguratorState, saveConfiguratorState } from "./storage";
+import {
+  clearConfiguratorState,
+  loadConfiguratorState,
+  saveConfiguratorState,
+} from "./storage";
 import type { ConfiguratorAction, ConfiguratorState } from "./types";
 
 type ConfiguratorContextValue = {
@@ -50,6 +54,18 @@ export function ConfiguratorProvider({ children }: { children: ReactNode }) {
     }
     saveConfiguratorState(state);
   }, [state]);
+
+  // Reset al abandonar el configurador vía navegación SPA. El cleanup de
+  // useEffect solo corre cuando React desmonta el provider (ir a otra ruta);
+  // en un refresh el browser destruye el contexto JS y no llega a correr,
+  // por lo que la sesión sobrevive al refresh tal como pidió el brief.
+  // La vuelta desde MercadoPago (full reload) se cubre aparte en
+  // /confirmacion con <ResetConfiguratorOnMount />.
+  useEffect(() => {
+    return () => {
+      clearConfiguratorState();
+    };
+  }, []);
 
   const value = useMemo<ConfiguratorContextValue>(
     () => ({

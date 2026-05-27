@@ -31,6 +31,26 @@
       "p2Title": "Dimensionado al milímetro.",
       "p2Body": "Cada compartimento calza con el accesorio que eliges. Si no lo eliges, el espacio queda libre."
     },
+    "Sistema": {
+      "label": "EL SISTEMA",
+      "title": "Ensambles por fricción. <em>Sin un solo tornillo.</em>",
+      "subtitle": "Cada Campero se transporta plano dentro de su estuche y se arma en tu vehículo en minutos. Tres etapas, una geometría pensada hasta el último encastre.",
+      "stage1Label": "ESTUCHE",
+      "stage1Title": "Llega plano.",
+      "stage1Body": "Las piezas viajan apiladas dentro de un bolso rígido del tamaño de una maleta de mano. Lo cargas con una sola mano y entra en cualquier maletero.",
+      "stage2Label": "ENSAMBLE",
+      "stage2Title": "Encastres geométricos.",
+      "stage2Body": "Cada panel tiene cortes CNC con tolerancia de 0,2 mm. Los ensambles funcionan por fricción y geometría: encajan en una sola posición, sin tornillos, sin herramientas.",
+      "stage3Label": "ARMADO",
+      "stage3Title": "Mueble rígido.",
+      "stage3Body": "Una vez ensamblado, el conjunto se comporta como una pieza única. Los compartimentos están dimensionados al milímetro para los accesorios Alpicool, EcoFlow y bidones que ofrecemos.",
+      "statTimeLabel": "ARMADO EN",
+      "statTimeValue": "10 min",
+      "statToolsLabel": "HERRAMIENTAS",
+      "statToolsValue": "0",
+      "statReversibleLabel": "REVERSIBLE",
+      "statReversibleValue": "100%"
+    },
     "Tagline": "Diseñado en Pucón. Pensado para todo el sur.",
     "Catalog": {
       "label": "CATÁLOGO COMPLETO",
@@ -70,7 +90,8 @@
 
   "Configurator": {
     "progress": {
-      "label": "PASO {current} DE {total}"
+      "label": "PASO {current} DE {total}",
+      "goTo": "Volver al paso {step} de {total}"
     },
     "nav": {
       "back": "← Atrás",

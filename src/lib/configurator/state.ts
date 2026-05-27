@@ -47,6 +47,8 @@ export function configuratorReducer(
       return { ...state, step: clampStep(state.step + 1) };
     case "GO_BACK":
       return { ...state, step: clampStep(state.step - 1) };
+    case "GO_TO_STEP":
+      return { ...state, step: clampStep(action.step) };
     case "RESET":
       return initialState;
     case "HYDRATE":

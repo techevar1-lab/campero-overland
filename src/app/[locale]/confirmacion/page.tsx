@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ResetConfiguratorOnMount } from "@/components/configurador/ResetConfiguratorOnMount";
 import { Link } from "@/i18n/navigation";
 
 type Status = "success" | "failure" | "pending";
@@ -35,6 +36,7 @@ async function SuccessView() {
   const t = await getTranslations("Confirmation.success");
   return (
     <section className="bg-cream">
+      <ResetConfiguratorOnMount />
       <div className="mx-auto max-w-[640px] px-6 py-20 text-center sm:px-12 lg:px-20">
         <p className="mb-3 font-mono text-[10px] uppercase tracking-[3px] text-ochre">
           Pago confirmado

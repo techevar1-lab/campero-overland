@@ -10,6 +10,7 @@ import { Step4Material } from "@/components/configurador/steps/Step4Material";
 import { Step5Accessories } from "@/components/configurador/steps/Step5Accessories";
 import { Step6Summary } from "@/components/configurador/steps/Step6Summary";
 import { useConfigurator } from "@/lib/configurator/context";
+import type { Step } from "@/lib/configurator/types";
 
 function StepContent({ step }: { step: number }) {
   switch (step) {
@@ -35,7 +36,12 @@ export function ConfiguratorClient() {
 
   return (
     <div className="mx-auto w-full max-w-7xl px-6 py-10 sm:px-12 sm:py-14 lg:px-20">
-      <ProgressBar currentStep={state.step + 1} />
+      <ProgressBar
+        currentStep={state.step + 1}
+        onStepSelect={(step) =>
+          dispatch({ type: "GO_TO_STEP", step: step as Step })
+        }
+      />
 
       <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_400px] lg:gap-12">
         <section className="order-2 lg:order-1">

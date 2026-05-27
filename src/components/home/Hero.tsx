@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/Button";
+import { Link } from "@/i18n/navigation";
 
 export function Hero() {
   const t = useTranslations("HomePage.Hero");
@@ -55,10 +55,18 @@ export function Hero() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3.5">
-            <Button variant="primary">{t("ctaPrimary")}</Button>
-            <Button variant="secondary" className="text-cream">
+            <Link
+              href="/configurador"
+              className="inline-flex items-center justify-center bg-ochre px-8 py-[15px] font-sans text-[13px] font-medium tracking-[0.5px] text-cream transition-colors hover:bg-ochre-dark"
+            >
+              {t("ctaPrimary")}
+            </Link>
+            <a
+              href="#sistema"
+              className="inline-flex items-center justify-center border-[0.5px] border-cream/50 bg-transparent px-8 py-[15px] font-sans text-[13px] font-medium tracking-[0.5px] text-cream transition-colors hover:bg-cream/5"
+            >
               {t("ctaSecondary")}
-            </Button>
+            </a>
           </div>
         </div>
 

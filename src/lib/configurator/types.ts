@@ -41,5 +41,6 @@ export type ConfiguratorAction =
   | { type: "SET_EMAIL"; email: string }
   | { type: "GO_NEXT" }
   | { type: "GO_BACK" }
+  | { type: "GO_TO_STEP"; step: Step }
   | { type: "RESET" }
   | { type: "HYDRATE"; state: ConfiguratorState };
