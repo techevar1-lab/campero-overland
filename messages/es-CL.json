@@ -63,7 +63,9 @@
   },
 
   "Footer": {
-    "tagline": "PUCÓN · CHILE · 2026"
+    "tagline": "PUCÓN · CHILE · 2026",
+    "privacyLink": "Privacidad",
+    "termsLink": "Términos"
   },
 
   "Configurator": {
@@ -327,6 +329,90 @@
     },
     "delivered": {
       "subject": "¿Cómo armaste tu Campero? Cuéntanos."
+    }
+  },
+
+  "Legal": {
+    "lastUpdate": "Última actualización: mayo de 2026",
+    "draftNotice": "Este documento es un borrador inicial. Antes de la primera transacción real, debe ser revisado por un abogado.",
+    "privacy": {
+      "title": "Política de privacidad",
+      "intro": "En Campero Overland respetamos tu privacidad. Esta política explica qué información recopilamos cuando usas camperooverland.cl, cómo la usamos, con quién la compartimos y qué derechos tienes sobre ella.",
+      "sections": {
+        "whoTitle": "Quiénes somos",
+        "whoBody": "Campero Overland es una marca chilena dedicada al diseño y fabricación de mobiliario portátil de camperización para SUV overland. Operamos desde Pucón, Chile. Para cualquier consulta relacionada con esta política, podés escribirnos a hola@camperooverland.cl.",
+
+        "dataTitle": "Qué información recopilamos",
+        "dataBody": "Cuando usás el configurador y completás una compra, recopilamos los siguientes datos: tu correo electrónico (obligatorio para enviarte la confirmación y seguimiento del pedido), la configuración del Campero que elegiste (vehículo, modelo, material, accesorios), el monto total y la información de pago procesada por MercadoPago. Si nos contactás por el formulario, también guardamos tu nombre, mensaje y dirección de correo. No solicitamos ni almacenamos datos de tu tarjeta de crédito ni de tu cuenta bancaria; todos los pagos los procesa MercadoPago en sus propios servidores.",
+
+        "useTitle": "Cómo usamos tu información",
+        "useBody": "Usamos tus datos exclusivamente para: (1) procesar tu pedido y coordinar la fabricación y envío del Campero que configuraste, (2) enviarte emails transaccionales con el estado de tu pedido (confirmación, despacho, entrega), (3) responder a las consultas que nos envíes por el formulario de contacto, y (4) cumplir con obligaciones legales y tributarias. No usamos tus datos para enviarte publicidad de terceros ni los vendemos a nadie.",
+
+        "shareTitle": "Con quién compartimos información",
+        "shareBody": "Compartimos los datos estrictamente necesarios con tres proveedores de servicios: MercadoPago (procesamiento de pagos), Resend (envío de emails transaccionales) y Supabase (alojamiento de la base de datos del pedido). Cada uno de estos proveedores tiene sus propias políticas de privacidad y opera bajo estándares de seguridad reconocidos. Eventualmente compartimos información mínima con la empresa de despacho para que pueda entregarte el producto. No compartimos datos con anunciantes ni con terceros con fines de marketing.",
+
+        "cookiesTitle": "Cookies y tecnologías similares",
+        "cookiesBody": "El sitio guarda en tu navegador (vía localStorage) las selecciones que hacés en el configurador, de modo que no las pierdas si refrescás la página. Esta información permanece solo en tu dispositivo, no llega a nuestros servidores hasta que confirmás el pago. No usamos cookies de seguimiento de terceros ni publicidad. Podemos usar herramientas básicas de analítica agregada (Cloudflare Analytics, Vercel Analytics) que no permiten identificarte individualmente.",
+
+        "retentionTitle": "Tiempo de conservación",
+        "retentionBody": "Conservamos los datos asociados a tu pedido mientras sean necesarios para cumplir la garantía (12 meses) y las obligaciones contables y tributarias chilenas (mínimo 6 años, según el SII). Las consultas del formulario de contacto se conservan por hasta 12 meses para hacer seguimiento de la conversación, salvo que pidas su eliminación antes.",
+
+        "rightsTitle": "Tus derechos",
+        "rightsBody": "Conforme a la Ley 19.628 de Chile, tenés derecho a acceder a los datos personales que tenemos sobre vos, solicitar su rectificación si están equivocados, pedir su eliminación cuando ya no sean necesarios, y oponerte al uso de ciertos datos. Para ejercer cualquiera de estos derechos, escribinos a hola@camperooverland.cl. Respondemos en un plazo máximo de 15 días hábiles.",
+
+        "securityTitle": "Seguridad",
+        "securityBody": "Tomamos medidas razonables para proteger tus datos: el sitio funciona sobre HTTPS, los datos están almacenados en bases con control de acceso, los pagos se procesan a través de MercadoPago sin pasar por nuestros servidores. Sin embargo, ningún sistema online es 100% seguro; si detectás algo inusual con tu pedido, escribinos.",
+
+        "changesTitle": "Cambios a esta política",
+        "changesBody": "Si modificamos esta política, vamos a actualizar la fecha de \"Última actualización\" arriba. Los cambios importantes te los avisamos por email si afectan pedidos en curso.",
+
+        "contactTitle": "Contacto",
+        "contactBody": "Cualquier duda relacionada con esta política o con el manejo de tus datos: hola@camperooverland.cl."
+      }
+    },
+    "terms": {
+      "title": "Términos y condiciones",
+      "intro": "Estos términos regulan las compras realizadas a través de camperooverland.cl. Al hacer una compra, aceptás estas condiciones. Te recomendamos leerlas con atención antes de pagar.",
+      "sections": {
+        "providerTitle": "1. Identificación del proveedor",
+        "providerBody": "El proveedor de los productos comercializados en camperooverland.cl es Campero Overland, con domicilio en Pucón, Chile. Para cualquier consulta relacionada con tu compra, escribinos a hola@camperooverland.cl o por WhatsApp al número publicado en /contacto.",
+
+        "acceptanceTitle": "2. Aceptación",
+        "acceptanceBody": "Al completar una configuración, ingresar tus datos y hacer click en Pagar, aceptás estos términos y la política de privacidad del sitio. Si no estás de acuerdo con alguna cláusula, no realices la compra y contactanos para resolver cualquier duda previa.",
+
+        "productsTitle": "3. Productos y precios",
+        "productsBody": "Comercializamos seis modelos base de mobiliario portátil de camperización para SUV (ver /producto). Cada modelo admite dos materiales (plástico reciclado PET/HDPE o terciado de abedul báltico) y accesorios opcionales. Los precios publicados están expresados en pesos chilenos (CLP), incluyen IVA cuando corresponda y se calculan en tiempo real en el configurador en función del modelo, material y accesorios elegidos. Los precios pueden modificarse sin aviso, pero el precio aplicable a tu pedido es el que se muestra en el resumen al momento de pagar.",
+
+        "orderTitle": "4. Configurador y pedidos",
+        "orderBody": "El sistema te guía por seis pasos para definir tu Campero: vehículo, modo de viaje, modelo, material, accesorios y resumen. Una vez completado el pago, el pedido queda confirmado y entra a producción. No es posible modificar la configuración una vez confirmado el pago. Si necesitás cambiar algo, contactanos lo antes posible y evaluaremos caso a caso, sujeto a si la fabricación todavía no comenzó.",
+
+        "paymentTitle": "5. Pago",
+        "paymentBody": "El pago se procesa a través de MercadoPago Chile. Aceptamos los medios habilitados por MercadoPago (tarjetas de crédito, débito, transferencia bancaria, etc.). El cobro se realiza al confirmar la compra y comienza la fabricación una vez confirmado el pago efectivo por MercadoPago. No procesamos pagos en nuestros servidores: tu información financiera viaja directamente entre tu navegador y MercadoPago.",
+
+        "manufacturingTitle": "6. Fabricación bajo pedido",
+        "manufacturingBody": "Cada Campero se fabrica bajo pedido en Chile. El tiempo estimado de fabricación es de 15 días hábiles desde la confirmación del pago. Te enviamos un email cuando el pedido está listo para despacho. Si por alguna razón excepcional el plazo se extiende, te avisamos por email con la nueva estimación.",
+
+        "shippingTitle": "7. Envío",
+        "shippingBody": "Despachamos a todo Chile continental con una tarifa fija (flat-rate) de CLP 25.000. El tiempo de envío adicional es de 3 a 7 días hábiles según comuna, una vez despachado. Coordinamos el despacho con la empresa de transporte y te enviamos un código de seguimiento por email. No realizamos envíos fuera de Chile en esta versión del sitio.",
+
+        "rightOfWithdrawalTitle": "8. Derecho de retracto",
+        "rightOfWithdrawalBody": "Conforme al artículo 3 bis de la Ley 19.496 (Sernac), tenés derecho a retractarte de la compra dentro de los 10 días hábiles siguientes a la recepción del producto, devolviéndolo en las condiciones originales, sin uso y con todos sus accesorios. Para ejercer este derecho, escribinos a hola@camperooverland.cl indicando el número de pedido. Los costos de devolución corren por tu cuenta, salvo que la causa de la devolución sea un defecto de fabricación.",
+
+        "warrantyTitle": "9. Garantía",
+        "warrantyBody": "Ofrecemos una garantía voluntaria de 12 meses contados desde la fecha de entrega, que cubre defectos de fabricación en piezas estructurales del mueble. Esta garantía es adicional a la garantía legal mínima que establece la Ley 19.496. No cubre daños por uso indebido, golpes, exposición prolongada a condiciones extremas no previstas en el manual, ni desgaste normal por uso. Tampoco cubre los accesorios electrónicos (refrigeradores Alpicool, estaciones de energía EcoFlow, bidones), que tienen sus propias garantías directas del fabricante. Si tu Campero presenta un defecto cubierto, contactanos y coordinamos la reparación o reemplazo.",
+
+        "liabilityTitle": "10. Responsabilidad",
+        "liabilityBody": "Campero Overland es responsable por los defectos de fabricación cubiertos por la garantía y por el cumplimiento del pedido en los términos acordados. No nos hacemos responsables del uso indebido del producto, accidentes derivados de modificaciones hechas por terceros, o daños indirectos. Las imágenes y representaciones esquemáticas del sitio son referenciales; pequeñas variaciones de color y acabado son normales en productos fabricados a mano.",
+
+        "changesTitle": "11. Modificaciones",
+        "changesBody": "Podemos actualizar estos términos en el futuro. Los pedidos ya confirmados se rigen por la versión vigente al momento de la compra. Las modificaciones aplican solo a pedidos posteriores y se reflejan en la fecha de \"Última actualización\" en esta página.",
+
+        "jurisdictionTitle": "12. Jurisdicción",
+        "jurisdictionBody": "Estos términos se rigen por la legislación chilena. Para cualquier controversia, las partes se someten a los tribunales ordinarios de Pucón o, a elección del consumidor, a la justicia del domicilio del comprador.",
+
+        "contactTitle": "13. Contacto",
+        "contactBody": "Para reclamos, devoluciones, consultas sobre garantía o cualquier duda relacionada con tu pedido: hola@camperooverland.cl o WhatsApp al número publicado en /contacto."
+      }
     }
   }
 }
