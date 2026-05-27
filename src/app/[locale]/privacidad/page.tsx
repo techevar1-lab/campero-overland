@@ -12,6 +12,7 @@ const SECTIONS = [
   "cookies",
   "retention",
   "rights",
+  "minors",
   "security",
   "changes",
   "contact",

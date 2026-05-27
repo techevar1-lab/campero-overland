@@ -10,6 +10,7 @@ const SECTIONS = [
   "products",
   "order",
   "payment",
+  "billing",
   "manufacturing",
   "shipping",
   "rightOfWithdrawal",
