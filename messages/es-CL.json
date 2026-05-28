@@ -68,8 +68,10 @@
       "fichaTileAriaLabel": "Abrir ficha técnica de {brand}",
       "items": {
         "fridgeBrand": "Alpicool",
+        "fridgeCategory": "Refrigeración enchufable",
         "fridgeVariants": "X18 · X30",
         "powerBrand": "EcoFlow",
+        "powerCategory": "Estación de energía",
         "powerVariants": "RIVER 3 · PLUS · PRO",
         "waterBrand": "Bidón + bomba",
         "waterVariants": "6L · 10L · 19L",

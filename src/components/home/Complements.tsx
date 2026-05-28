@@ -1,6 +1,7 @@
 "use client";
 
-import { Check, Droplet, Refrigerator, Zap } from "lucide-react";
+import { Check, Droplet } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState, type ReactNode } from "react";
 import { FichaTecnicaModal } from "@/components/complements/FichaTecnicaModal";
@@ -40,8 +41,12 @@ const data = accesoriosData as unknown as AccesoriosData;
 type Tile =
   | {
       kind: "brand";
-      icon: ReactNode;
+      icon?: ReactNode;
+      image?: { src: string; alt: string };
       brand: string;
+      // Cuando hay imagen, la línea primaria muestra la categoría
+      // (ej. "Refrigeración enchufable") y la secundaria la marca.
+      category?: string;
       variants: string;
       ficha?: FichaId;
     }
@@ -59,6 +64,8 @@ function Tile({
   const isInteractive =
     tile.kind === "brand" && Boolean(tile.ficha) && Boolean(onOpenFicha);
 
+  const hasImage = tile.kind === "brand" && Boolean(tile.image);
+
   const iconBoxBase =
     tile.kind === "ready"
       ? "bg-green-deep"
@@ -66,9 +73,14 @@ function Tile({
         ? "bg-ochre-warm transition-colors group-hover:bg-ochre/20"
         : "bg-ochre-warm";
 
-  const primaryLabel = tile.kind === "ready" ? null : tile.brand;
+  const primaryLabel =
+    tile.kind === "ready" ? null : (tile.category ?? tile.brand);
   const secondaryLabel =
-    tile.kind === "ready" ? tile.label : tile.variants;
+    tile.kind === "ready"
+      ? tile.label
+      : hasImage && tile.kind === "brand"
+        ? tile.brand
+        : (tile as { variants: string }).variants;
   const secondaryColor =
     tile.kind === "ready" ? "text-green-deep" : "text-ink-soft";
 
@@ -79,9 +91,19 @@ function Tile({
   const inner = (
     <>
       <div
-        className={`mb-2 flex aspect-square items-center justify-center rounded-[4px] ${iconBoxBase}`}
+        className={`relative mb-2 flex aspect-square items-center justify-center overflow-hidden rounded-[4px] ${iconBoxBase}`}
       >
-        {tile.icon}
+        {tile.kind === "brand" && tile.image ? (
+          <Image
+            src={tile.image.src}
+            alt={tile.image.alt}
+            fill
+            sizes="(max-width: 1024px) 45vw, 280px"
+            className="object-cover"
+          />
+        ) : (
+          tile.icon
+        )}
       </div>
       <p
         className={`font-serif text-[13px] ${primaryColor}`}
@@ -163,15 +185,23 @@ export function Complements() {
   const tiles: Tile[] = [
     {
       kind: "brand",
-      icon: <Refrigerator aria-hidden {...iconProps} />,
+      image: {
+        src: "/complements/alpicool.png",
+        alt: `${t("items.fridgeCategory")} ${t("items.fridgeBrand")}`,
+      },
       brand: t("items.fridgeBrand"),
+      category: t("items.fridgeCategory"),
       variants: t("items.fridgeVariants"),
       ficha: "fridge",
     },
     {
       kind: "brand",
-      icon: <Zap aria-hidden {...iconProps} />,
+      image: {
+        src: "/complements/ecoflow.png",
+        alt: `${t("items.powerCategory")} ${t("items.powerBrand")}`,
+      },
       brand: t("items.powerBrand"),
+      category: t("items.powerCategory"),
       variants: t("items.powerVariants"),
       ficha: "power",
     },
