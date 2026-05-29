@@ -1,5 +1,6 @@
 "use client";
 
+import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useState, type FormEvent, type ReactNode } from "react";
@@ -180,9 +181,13 @@ export function CustomDesignForm() {
         role="status"
         className="rounded-sm border-[0.5px] border-green-deep/15 bg-cream-pure p-8 sm:p-10"
       >
-        <p className="mb-3 font-mono text-[10px] uppercase tracking-[3px] text-ochre">
-          ✓
-        </p>
+        <Check
+          aria-hidden
+          width={22}
+          height={22}
+          strokeWidth={1.6}
+          className="mb-3 text-ochre"
+        />
         <h2 className="mb-3 font-serif text-2xl leading-[1.2] text-green-deep">
           {t("success.title")}
         </h2>

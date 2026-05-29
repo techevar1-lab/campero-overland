@@ -4,7 +4,9 @@
     "configurator": "Configurador",
     "custom": "A medida",
     "history": "Historia",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
 
   "HomePage": {
