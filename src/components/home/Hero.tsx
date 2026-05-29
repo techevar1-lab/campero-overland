@@ -70,26 +70,35 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Stats (bottom-right en desktop, debajo del contenido en mobile) */}
+        {/* Stats (bottom-right en desktop, debajo del contenido en mobile).
+            Cada dato lidera con el número (en ocre) para lectura rápida. */}
         <dl className="mt-12 flex flex-wrap gap-9 lg:absolute lg:bottom-8 lg:right-20 lg:mt-0">
-          <div>
-            <dt className="mb-1.5 font-mono text-[9px] uppercase tracking-[2px] text-ochre">
-              {t("statArmedLabel")}
-            </dt>
-            <dd className="font-serif text-3xl tracking-[-1px] text-cream">
-              {t("statArmedValue")}
-            </dd>
-          </div>
-          <div>
-            <dt className="mb-1.5 font-mono text-[9px] uppercase tracking-[2px] text-ochre">
-              {t("statNoToolsLabel")}
-            </dt>
-            <dd className="font-serif text-3xl italic tracking-[-1px] text-cream">
-              {t("statNoToolsValue")}
-            </dd>
-          </div>
+          <Stat label={t("statArmedLabel")} value={t("statArmedValue")} />
+          <Stat label={t("statNoToolsLabel")} value={t("statNoToolsValue")} />
+          <Stat label={t("statStoredLabel")} value={t("statStoredValue")} />
         </dl>
       </div>
     </section>
+  );
+}
+
+/**
+ * Stat del hero: el valor se parte en número (primer token, en ocre) +
+ * unidad (resto, en crema), para que el dato grande lidere con un número
+ * positivo y se lea de un vistazo.
+ */
+function Stat({ label, value }: { label: string; value: string }) {
+  const [number, ...rest] = value.split(" ");
+  const unit = rest.join(" ");
+  return (
+    <div>
+      <dt className="mb-1.5 font-mono text-[9px] uppercase tracking-[2px] text-ochre">
+        {label}
+      </dt>
+      <dd className="font-serif text-3xl tracking-[-1px] text-cream">
+        <span className="text-ochre">{number}</span>
+        {unit ? ` ${unit}` : null}
+      </dd>
+    </div>
   );
 }

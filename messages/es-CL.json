@@ -16,8 +16,10 @@
       "ctaSecondary": "Ver el sistema",
       "statArmedLabel": "ARMADO EN",
       "statArmedValue": "10 min",
-      "statNoToolsLabel": "SIN UN SOLO",
-      "statNoToolsValue": "tornillo."
+      "statNoToolsLabel": "ENSAMBLE",
+      "statNoToolsValue": "0 tornillos",
+      "statStoredLabel": "SE GUARDA EN",
+      "statStoredValue": "1 estuche"
     },
     "Manifesto": {
       "label": "MANIFIESTO",
