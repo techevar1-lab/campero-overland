@@ -9,6 +9,7 @@ const BLOCKS = [
   { order: "02", titleKey: "systemTitle", paragraphsKey: "systemParagraphs" },
   { order: "03", titleKey: "processTitle", paragraphsKey: "processParagraphs" },
   { order: "04", titleKey: "southTitle", paragraphsKey: "southParagraphs" },
+  { order: "05", titleKey: "bespokeTitle", paragraphsKey: "bespokeParagraphs" },
 ] as const;
 
 export async function generateMetadata({

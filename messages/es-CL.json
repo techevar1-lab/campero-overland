@@ -85,6 +85,15 @@
       "title": "Seis preguntas.<br></br><em>Tu Campero ideal.</em>",
       "subtitle": "Te ayudamos a elegir el modelo, material y accesorios que se adaptan a cómo viajas.",
       "cta": "Empezar configurador →"
+    },
+    "CustomDesign": {
+      "label": "DISEÑO A MEDIDA",
+      "title": "¿Ninguno calza? <em>Lo diseñamos contigo.</em>",
+      "body": "Si tu vehículo no está en la lista o necesitas otras medidas, nuestra arquitecta modela una propuesta a la medida de cómo viajas. Cuéntanos qué necesitas y, si quieres, agenda una videollamada de 15 minutos.",
+      "bullet1": "Modifica las medidas de un modelo existente",
+      "bullet2": "O un diseño 100% a medida desde cero",
+      "bullet3": "Propuesta y presupuesto en 7 días, sin compromiso",
+      "cta": "Diseñar a medida →"
     }
   },
 
@@ -407,7 +416,12 @@
     },
     "step3": {
       "question": "Tu Campero recomendado",
-      "helper": "Esta opción se adapta a tu vehículo y uso."
+      "helper": "Esta opción se adapta a tu vehículo y uso.",
+      "bespokeTitle": "Diseño a medida",
+      "bespokeSubtitle": "Prefiero que la arquitecta diseñe algo 100% a mi medida. Sin pago ahora: te enviamos una propuesta en 7 días.",
+      "bespokeBadge": "A MEDIDA →",
+      "resizeCta": "¿Necesitas otras medidas? Diséñalo a medida →",
+      "resizeHelper": "Modificamos las medidas de este modelo. El costo depende de lo que requieras y lo cotiza la arquitecta."
     },
     "step4": {
       "question": "¿Con qué material lo fabricamos?",
@@ -505,6 +519,12 @@
         "Probamos los primeros Camperos recorriendo el sur de Chile y la Patagonia porque necesitábamos entender cómo respondían fuera del taller. Vibración constante, humedad, frío, polvo. El territorio funciona como filtro natural: lo que no resiste la ruta, simplemente no sirve.",
         "La comunidad outdoor y overland del sur también ha sido parte del proceso. Viajeros, fotógrafos, esquiadores, pescadores y gente que vive mucho tiempo en movimiento. Personas que usan el vehículo como herramienta y refugio al mismo tiempo.",
         "Diseñar desde acá cambia la manera de entender el espacio. Todo tiene que ocupar menos, durar más y adaptarse rápido."
+      ],
+      "bespokeTitle": "El diseño a medida",
+      "bespokeParagraphs": [
+        "No todos los vehículos ni todas las formas de viajar caben en un catálogo. Por eso, además de los modelos estándar, María Paz —arquitecta y cofundadora— diseña Camperos a medida: parte de cómo viajas, qué llevas y dónde duermes, y modela una propuesta pensada para tu vehículo exacto.",
+        "El proceso es simple. Nos cuentas tu caso por el formulario, opcionalmente conversamos en una videollamada de 15 minutos, y en un plazo de 7 días recibes una propuesta de diseño con su presupuesto. Lo mismo aplica si te gusta un modelo del catálogo pero necesitas cambiar algunas medidas.",
+        "Es la misma ingeniería de ensambles sin tornillos, adaptada milímetro a milímetro a tu manera de moverte."
       ]
     }
   },

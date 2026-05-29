@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Suspense } from "react";
 import { CustomDesignForm } from "@/components/a-medida/CustomDesignForm";
 
 type Params = { locale: string };
@@ -79,7 +80,9 @@ export default async function AMedidaPage({
       {/* FORMULARIO */}
       <section className="bg-cream">
         <div className="mx-auto max-w-2xl px-6 py-16 sm:px-12 lg:px-20">
-          <CustomDesignForm />
+          <Suspense fallback={null}>
+            <CustomDesignForm />
+          </Suspense>
         </div>
       </section>
     </article>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { z } from "zod";
 import { OptionCard } from "@/components/configurador/OptionCard";
@@ -38,11 +39,20 @@ const MODELS = productosData.products.map((p) => ({
 export function CustomDesignForm() {
   const t = useTranslations("CustomDesign.form");
 
+  // Prefill desde el configurador (ej. /a-medida?from=configurador&type=modify&model=j3_org).
+  const searchParams = useSearchParams();
+  const source = searchParams.get("from") ?? undefined;
+
   const [vehicle, setVehicle] = useState("");
   const [year, setYear] = useState("");
-  const [requestType, setRequestType] = useState<RequestType | null>(null);
+  const [requestType, setRequestType] = useState<RequestType | null>(
+    searchParams.get("type") === "modify" ? "modify" : null,
+  );
 
-  const [modifyModel, setModifyModel] = useState("");
+  const [modifyModel, setModifyModel] = useState(() => {
+    const model = searchParams.get("model");
+    return model && MODELS.some((m) => m.id === model) ? model : "";
+  });
   const [modifyChanges, setModifyChanges] = useState("");
 
   const [company, setCompany] = useState<Company[]>([]);
@@ -112,6 +122,7 @@ export function CustomDesignForm() {
             vehicle,
             year,
             requestType,
+            source,
             modifyModel,
             modifyChanges,
             wantsMeeting,
@@ -124,6 +135,7 @@ export function CustomDesignForm() {
             vehicle,
             year,
             requestType,
+            source,
             company,
             kidsAges: kidsAges || undefined,
             sleep: sleep ?? undefined,

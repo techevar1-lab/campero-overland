@@ -1,3 +1,4 @@
+import { AMedida } from "@/components/home/AMedida";
 import { Catalog } from "@/components/home/Catalog";
 import { Complements } from "@/components/home/Complements";
 import { CtaFinal } from "@/components/home/CtaFinal";
@@ -15,6 +16,7 @@ export default function Home() {
       <Sistema />
       <Catalog />
       <Complements />
+      <AMedida />
       <CtaFinal />
     </>
   );
