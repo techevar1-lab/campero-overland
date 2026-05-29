@@ -1,18 +1,18 @@
 {
-  "_comment": "Accesorios opcionales del configurador. Cada accesorio tiene variantes por tamaño. Marca y modelo reales para los electrónicos (Alpicool, EcoFlow); bidones con bomba genéricos. Precios en CLP. addWeight/addVolume es lo que suma al peso/volumen del bolso final del Campero.",
+  "_comment": "Accesorios opcionales del configurador. Cada accesorio tiene variantes por tamaño. Marca y modelo reales para los electrónicos (Alpicool, EcoFlow) y el estanque de agua (San Hima). Precios en CLP. addWeight/addVolume es lo que suma al peso/volumen del bolso final del Campero.",
   "groups": [
     {
       "id": "water",
-      "label": "BIDÓN CON BOMBA DE AGUA",
-      "description": "Bidones rígidos con bomba eléctrica USB integrada.",
+      "label": "WATER TANK PORTABLE",
+      "description": "Estanques de agua portátiles San Hima con bomba eléctrica integrada.",
       "variants": [
         {
           "id": "water_6",
           "size": "6 L",
-          "brand": "Bidón con bomba",
+          "brand": "San Hima",
           "model": "6 litros",
-          "fullName": "Bidón con bomba 6 L",
-          "longDescription": "Bidón rígido con bomba eléctrica USB integrada. Cabe en cualquier compartimento del módulo de agua.",
+          "fullName": "Water tank San Hima · 6 L",
+          "longDescription": "Estanque de agua portátil San Hima con bomba eléctrica integrada. Cabe en cualquier compartimento del módulo de agua.",
           "price": { "amount": 50000, "currency": "CLP" },
           "addWeight": 1.2,
           "addVolume": 4
@@ -20,9 +20,9 @@
         {
           "id": "water_10",
           "size": "10 L",
-          "brand": "Bidón con bomba",
+          "brand": "San Hima",
           "model": "10 litros",
-          "fullName": "Bidón con bomba 10 L",
+          "fullName": "Water tank San Hima · 10 L",
           "longDescription": "Capacidad media. Compatible con el módulo estándar de agua del Campero.",
           "price": { "amount": 70000, "currency": "CLP" },
           "addWeight": 1.8,
@@ -31,9 +31,9 @@
         {
           "id": "water_19",
           "size": "19 L",
-          "brand": "Bidón con bomba",
+          "brand": "San Hima",
           "model": "19 litros",
-          "fullName": "Bidón con bomba 19 L",
+          "fullName": "Water tank San Hima · 19 L",
           "longDescription": "Máxima autonomía. Cabe justo en el módulo grande de agua, ideal para viajes largos.",
           "price": { "amount": 90000, "currency": "CLP" },
           "addWeight": 2.8,

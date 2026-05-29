@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Droplet } from "lucide-react";
+import { Check } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState, type ReactNode } from "react";
@@ -207,8 +207,12 @@ export function Complements() {
     },
     {
       kind: "brand",
-      icon: <Droplet aria-hidden {...iconProps} />,
+      image: {
+        src: "/complements/watertank.png",
+        alt: `${t("items.waterCategory")} ${t("items.waterBrand")}`,
+      },
       brand: t("items.waterBrand"),
+      category: t("items.waterCategory"),
       variants: t("items.waterVariants"),
       ficha: "water",
     },

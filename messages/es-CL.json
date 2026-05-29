@@ -43,7 +43,7 @@
       "stage2Body": "Cada panel tiene cortes CNC con tolerancia de 0,2 mm. Los ensambles funcionan por fricción y geometría: encajan en una sola posición, sin tornillos, sin herramientas.",
       "stage3Label": "ARMADO",
       "stage3Title": "Mueble rígido.",
-      "stage3Body": "Una vez ensamblado, el conjunto se comporta como una pieza única. Los compartimentos están dimensionados al milímetro para los accesorios Alpicool, EcoFlow y bidones que ofrecemos.",
+      "stage3Body": "Una vez ensamblado, el conjunto se comporta como una pieza única. Los compartimentos están dimensionados al milímetro para los accesorios Alpicool, EcoFlow y los estanques de agua San Hima que ofrecemos.",
       "statTimeLabel": "ARMADO EN",
       "statTimeValue": "10 min",
       "statToolsLabel": "HERRAMIENTAS",
@@ -73,7 +73,8 @@
         "powerBrand": "EcoFlow",
         "powerCategory": "Estación de energía",
         "powerVariants": "RIVER 3 · PLUS · PRO",
-        "waterBrand": "Bidón + bomba",
+        "waterBrand": "San Hima",
+        "waterCategory": "Water tank",
         "waterVariants": "6L · 10L · 19L",
         "ready": "PLUG & PLAY"
       }
@@ -91,7 +92,7 @@
     "brand": "CAMPERO OVERLAND",
     "location": "PUCÓN · CHILE · 2026",
     "title": "Sistema de Agua",
-    "subtitle": "BIDÓN + BOMBA 12V / USB",
+    "subtitle": "WATER TANK SAN HIMA · BOMBA 12V / USB",
     "docTag": "DOC. TÉCNICO",
     "rev": "REV. 01",
     "tabsAriaLabel": "Secciones de la ficha técnica",
@@ -157,7 +158,7 @@
       "noteBody": "La bomba va fija en su ranura de madera con ensamble puzzle + velcro de respaldo, NO con tornillos. Las mangueras se conectan con racores rápidos para facilitar el desmontaje completo del sistema al guardar el Campero en su estuche."
     },
     "sidebar": {
-      "sizeLabel": "SELECCIONA TAMAÑO DE BIDÓN",
+      "sizeLabel": "SELECCIONA TAMAÑO DEL ESTANQUE",
       "litros": "L",
       "dimsLabel": "DIMENSIONES DEL COMPARTIMENTO",
       "anchoInterior": "Ancho interior",
@@ -169,7 +170,7 @@
       "holguraSuperiorValue": "+30 mm",
       "espesorPared": "Espesor pared madera",
       "espesorParedValue": "18 mm",
-      "pesoBidon": "Peso bidón lleno",
+      "pesoBidon": "Peso estanque lleno",
       "autonomia": "Autonomía",
       "specsLabel": "ESPECIFICACIONES BOMBA",
       "specs": {
@@ -189,7 +190,7 @@
         "dimsValue": "80×60×55 mm"
       },
       "pricesLabel": "PRECIO ADD-ON (CAMPERO)",
-      "priceRowLabel": "BIDÓN {size}L + BOMBA",
+      "priceRowLabel": "WATER TANK {size}L + BOMBA",
       "comparativeLabel": "COMPARATIVA RÁPIDA",
       "compare6": "6 L — viajeros solos",
       "compare6Value": "•••··",
@@ -437,7 +438,7 @@
       "question": "Personaliza tu Campero",
       "helper": "Tu Campero viene con compartimentos dimensionados para estos accesorios. Si los agregas, todo encaja perfectamente. Si no, el espacio queda libre para que pongas un complemento similar que ya tengas.",
       "skipWarning": "¿Estás seguro? Al agregarlos, aprovechas al máximo el diseño modular. Si no, siempre puedes comprarlos después.",
-      "groupWater": "BIDÓN CON BOMBA DE AGUA",
+      "groupWater": "WATER TANK PORTABLE",
       "groupFridge": "REFRIGERACIÓN ENCHUFABLE",
       "groupPower": "ESTACIÓN DE ENERGÍA",
       "noneOption": "No incluir",
