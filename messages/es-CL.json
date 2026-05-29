@@ -2,6 +2,7 @@
   "Navigation": {
     "product": "Producto",
     "configurator": "Configurador",
+    "custom": "A medida",
     "history": "Historia",
     "contact": "Contacto"
   },
@@ -573,6 +574,97 @@
       "locationLabel": "Ubicación",
       "locationValue": "Pucón, Chile",
       "visitsNote": "Visitas con cita previa"
+    }
+  },
+
+  "CustomDesign": {
+    "hero": {
+      "label": "DISEÑO A MEDIDA",
+      "title": "Tu Campero, <em>pensado contigo.</em>",
+      "subtitle": "Nuestra arquitecta diseña una propuesta a la medida de tu vehículo y de tu forma de viajar. Cuéntanos qué necesitas y, si quieres, agenda una videollamada de 15 minutos.",
+      "stepsLabel": "CÓMO FUNCIONA",
+      "steps": {
+        "s1Order": "01",
+        "s1Title": "Nos cuentas",
+        "s1Body": "Completas el formulario con tu vehículo y cómo viajas.",
+        "s2Order": "02",
+        "s2Title": "Conversamos",
+        "s2Body": "Opcional: videollamada de 15 min con la arquitecta para afinar detalles.",
+        "s3Order": "03",
+        "s3Title": "Recibes tu propuesta",
+        "s3Body": "En un plazo de 7 días te enviamos una propuesta de diseño y presupuesto."
+      }
+    },
+    "form": {
+      "vehicleSection": "Tu vehículo",
+      "vehicleLabel": "¿Qué vehículo tienes?",
+      "vehiclePlaceholder": "Ej. Suzuki Jimny, Toyota Hilux, Subaru Forester…",
+      "yearLabel": "Año",
+      "yearPlaceholder": "Ej. 2021",
+
+      "typeSection": "¿Qué necesitas?",
+      "typeModifyTitle": "Modificar un modelo existente",
+      "typeModifyHelper": "Me gusta un modelo del catálogo pero necesito cambiar algunas medidas.",
+      "typeCustomTitle": "Diseño 100% a medida",
+      "typeCustomHelper": "Quiero un diseño desde cero según mi forma de viajar.",
+
+      "modifyModelLabel": "¿Qué modelo quieres modificar?",
+      "modifyModelPlaceholder": "Selecciona un modelo",
+      "modifyChangesLabel": "¿Qué medidas necesitas cambiar?",
+      "modifyChangesPlaceholder": "Ej. 10 cm más bajo para que entre con la carpa de techo; cajón más profundo; etc.",
+
+      "travelSection": "Cómo viajas",
+      "companyLabel": "¿Con quién viajas habitualmente?",
+      "companyHelper": "Puedes elegir más de una opción.",
+      "companySolo": "Solo/a",
+      "companyCouple": "En pareja",
+      "companyKids": "Con niños",
+      "companyGroup": "Con amigos / grupo",
+      "kidsAgesLabel": "Edades de los niños",
+      "kidsAgesPlaceholder": "Ej. 4 y 7 años",
+      "sleepLabel": "¿Dónde duermen?",
+      "sleepInside": "Dentro del vehículo",
+      "sleepOutside": "Fuera (carpa de techo / camping)",
+      "sleepBoth": "Mixto (algunos dentro, otros fuera)",
+      "elementsLabel": "¿Algún elemento que deba incorporarse al diseño? (opcional)",
+      "elementsPlaceholder": "Ej. cocina, ducha, espacio para mascota, equipo de pesca, mesa de trabajo…",
+      "notesLabel": "Algo más que debamos saber (opcional)",
+      "notesPlaceholder": "Cuéntanos cualquier detalle que ayude a la propuesta.",
+
+      "meetingSection": "Reunión con la arquitecta",
+      "meetingCheckbox": "Quiero una videollamada de 15 min",
+      "meetingHelper": "Te escribimos por correo para coordinar día y hora.",
+      "availabilityLabel": "¿Qué días/horarios te acomodan? (opcional)",
+      "availabilityPlaceholder": "Ej. tardes de lunes a miércoles",
+
+      "contactSection": "Tus datos",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@correo.cl",
+      "phoneLabel": "Teléfono / WhatsApp (opcional)",
+      "phonePlaceholder": "+56 9 ...",
+
+      "submit": "Enviar solicitud →",
+      "submitting": "Enviando…",
+      "disclaimer": "Sin costo ni compromiso. Te respondemos con una propuesta en un plazo de 7 días hábiles.",
+      "errors": {
+        "vehicleRequired": "Cuéntanos qué vehículo tienes",
+        "yearRequired": "Ingresa el año de tu vehículo",
+        "typeRequired": "Elige una opción",
+        "modifyModelRequired": "Selecciona el modelo a modificar",
+        "modifyChangesShort": "Cuéntanos qué medidas cambiar (mínimo 10 caracteres)",
+        "companyRequired": "Elige al menos una opción",
+        "sleepRequired": "Elige dónde duermen",
+        "nameRequired": "Ingresa tu nombre",
+        "emailInvalid": "Ingresa un correo válido",
+        "submitFailed": "No pudimos enviar tu solicitud. Reintentá o escribinos directo a hola@camperooverland.cl",
+        "backendUnavailable": "Por ahora el formulario no está disponible. Escribinos directo a hola@camperooverland.cl"
+      },
+      "success": {
+        "title": "¡Solicitud enviada!",
+        "body": "Recibimos tu solicitud de diseño a medida. Nuestra arquitecta te contactará por correo para los próximos pasos y te enviará una propuesta en un plazo de 7 días hábiles."
+      }
     }
   },
 

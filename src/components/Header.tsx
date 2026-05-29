@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 const NAV_ITEMS = [
   { key: "product", href: "/" },
   { key: "configurator", href: "/configurador" },
+  { key: "custom", href: "/a-medida" },
   { key: "history", href: "/historia" },
   { key: "contact", href: "/contacto" },
 ] as const;
