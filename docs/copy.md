@@ -104,7 +104,7 @@ Carrusel de imágenes (3-5 por producto cuando estén las fotos reales).
 - Volumen del bolso: X litros
 - Capacidad de carga: X kg
 - Materiales disponibles: Plástico reciclado o Terciado de abedul
-- Compatibilidad accesorios: Refrigeración hasta 30L · Energía hasta 800W · Bidón hasta 19L
+- Compatibilidad accesorios: Refrigeración hasta 30L · Energía hasta 800W · Water tank 24L
 
 ### Sección "Cómo funciona"
 3 pasos cortos:
@@ -150,7 +150,7 @@ Carrusel de imágenes (3-5 por producto cuando estén las fotos reales).
 "Sí. Si elegís el material reciclado (PET/HDPE), es 100% resistente al agua. El terciado de abedul tiene un acabado con aceites hidrófugos."
 
 **¿Puedo comprar el Campero sin accesorios y agregarlos después?**
-"Sí. El Campero viene con compartimentos dimensionados para los accesorios recomendados (Alpicool, EcoFlow, bidones), pero si decides no comprarlos, el espacio queda libre y puedes usar uno similar que ya tengas. Siempre podés agregarlos después."
+"Sí. El Campero viene con compartimentos dimensionados para los accesorios recomendados (Alpicool, EcoFlow, water tank San Hima), pero si decides no comprarlos, el espacio queda libre y puedes usar uno similar que ya tengas. Siempre podés agregarlos después."
 
 **¿Hacen envíos a Argentina?**
 "Por ahora solo despachamos dentro de Chile. Estamos trabajando para expandir a Argentina pronto."

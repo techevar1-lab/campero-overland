@@ -20,7 +20,7 @@ type ConfiguratorState = {
   model: string | null;  // id del modelo elegido (depende de vehicle+use)
   material: "recycled" | "birch";  // default "recycled"
   addons: {
-    water: string | null;   // "water_6" | "water_10" | "water_19" | null
+    water: string | null;   // "water_24" | null
     fridge: string | null;  // "fridge_18" | "fridge_30" | null
     power: string | null;   // "power_300" | "power_600" | "power_800" | null
   };
@@ -110,10 +110,10 @@ Cada modelo se muestra como una tarjeta seleccionable (en V1 solo hay 1 modelo p
 
 **3 grupos de accesorios**, cada uno con sus variantes (selección única dentro del grupo, con opción "No incluir"):
 
-### Bidón con bomba de agua
-- 6 L — Bidón con bomba — $50.000 — peso +1.2 kg, volumen +4 L
-- 10 L — Bidón con bomba — $70.000 — peso +1.8 kg, volumen +6 L
-- 19 L — Bidón con bomba — $90.000 — peso +2.8 kg, volumen +10 L
+### Water tank portátil (San Hima)
+- 24 L — Water tank San Hima (ducha/estanque con bomba a batería 12V, manguera 6 m, 10 modos) — $200.000 — peso +4.0 kg, volumen +28 L
+
+> Único tamaño desde mayo 2026. Antes había variantes 6/10/19 L con bomba; se reemplazaron por este modelo único de 24 L autónomo (id `water_24`).
 
 ### Refrigeración enchufable
 - 18 L — Alpicool X18 — $220.000 — peso +10.5 kg, volumen +22 L

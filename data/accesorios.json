@@ -4,40 +4,28 @@
     {
       "id": "water",
       "label": "WATER TANK PORTABLE",
-      "description": "Estanques de agua portátiles San Hima con bomba eléctrica integrada.",
+      "description": "Ducha y estanque portátil San Hima de 24 L con bomba eléctrica a batería 12V. Manguera de 6 m con 10 modos de rociado.",
+      "supplier": "San Hima",
       "variants": [
         {
-          "id": "water_6",
-          "size": "6 L",
+          "id": "water_24",
+          "size": "24 L",
           "brand": "San Hima",
-          "model": "6 litros",
-          "fullName": "Water tank San Hima · 6 L",
-          "longDescription": "Estanque de agua portátil San Hima con bomba eléctrica integrada. Cabe en cualquier compartimento del módulo de agua.",
-          "price": { "amount": 50000, "currency": "CLP" },
-          "addWeight": 1.2,
-          "addVolume": 4
-        },
-        {
-          "id": "water_10",
-          "size": "10 L",
-          "brand": "San Hima",
-          "model": "10 litros",
-          "fullName": "Water tank San Hima · 10 L",
-          "longDescription": "Capacidad media. Compatible con el módulo estándar de agua del Campero.",
-          "price": { "amount": 70000, "currency": "CLP" },
-          "addWeight": 1.8,
-          "addVolume": 6
-        },
-        {
-          "id": "water_19",
-          "size": "19 L",
-          "brand": "San Hima",
-          "model": "19 litros",
-          "fullName": "Water tank San Hima · 19 L",
-          "longDescription": "Máxima autonomía. Cabe justo en el módulo grande de agua, ideal para viajes largos.",
-          "price": { "amount": 90000, "currency": "CLP" },
-          "addWeight": 2.8,
-          "addVolume": 10
+          "model": "Ducha/estanque portátil 24 L",
+          "fullName": "Water tank San Hima · 24 L",
+          "longDescription": "Ducha rápida, limpieza de equipo o agua segura al instante. Bomba eléctrica a batería 12V (sin bomba manual), manguera de 6 m con cabezal de 10 modos de rociado. Polietileno grado alimenticio libre de BPA, rotomoldeado. Se carga en 4 horas y rinde hasta 4 usos por carga.",
+          "specs": {
+            "capacity": "24 L",
+            "pump": "Eléctrica a batería 12V (sin bomba manual)",
+            "hose": "6 m · 10 modos de rociado",
+            "usesPerCharge": 4,
+            "chargeTime": "4 h",
+            "material": "PE grado alimenticio, libre de BPA",
+            "mount": "Inserto roscado, ajuste universal"
+          },
+          "price": { "amount": 200000, "currency": "CLP" },
+          "addWeight": 4.0,
+          "addVolume": 28
         }
       ]
     },

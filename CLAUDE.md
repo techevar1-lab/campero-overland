@@ -59,7 +59,7 @@ E-commerce + configurador interactivo para venta de mobiliario portátil de camp
 
 **Materiales**: 2 opciones. Terciado de abedul báltico es la versión premium estándar (precio listado en productos.json). Plástico reciclado PET/HDPE es el default sustentable: −20% en el mueble (no afecta accesorios), −30% en peso.
 
-**Accesorios opcionales**: refrigeración (Alpicool X18/X30), energía (EcoFlow River 3/Plus/Pro), bidón con bomba (6L/10L/19L). Cada producto tiene compartimentos dimensionados para estos accesorios; si el cliente no los compra, el espacio queda libre.
+**Accesorios opcionales**: refrigeración (Alpicool X18/X30), energía (EcoFlow River 3/Plus/Pro), water tank portátil San Hima 24L (ducha/estanque con bomba a batería 12V). Cada producto tiene compartimentos dimensionados para estos accesorios; si el cliente no los compra, el espacio queda libre.
 
 **Envío**: flat-rate $25.000 CLP a todo Chile.
 
@@ -83,7 +83,7 @@ Lee solo cuando sea relevante a la tarea actual:
 - **@docs/diseno.md** — sistema visual completo: paleta, tipografía, espaciados, componentes
 - **@docs/integraciones.md** — cómo conectar MercadoPago, Supabase, Resend
 - **@data/productos.json** — los 6 SKUs con precios, dimensiones, peso/volumen base
-- **@data/accesorios.json** — Alpicool, EcoFlow, bidones con marca/modelo/descripción técnica
+- **@data/accesorios.json** — Alpicool, EcoFlow, water tank San Hima con marca/modelo/descripción técnica
 - **@data/materiales.json** — abedul vs reciclado con multiplicadores
 
 ## Reglas IMPORTANTES
