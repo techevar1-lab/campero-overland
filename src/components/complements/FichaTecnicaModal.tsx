@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 import { useEffect, useRef, type ReactNode } from "react";
 
 /**
- * Modal genérico para fichas técnicas de los complementos (Bidón + bomba,
+ * Modal genérico para fichas técnicas de los complementos (Water tank,
  * Alpicool, EcoFlow). Usa el elemento nativo <dialog> que ya provee:
  *
  * - Focus trap dentro del modal

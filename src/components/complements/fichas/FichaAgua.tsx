@@ -549,7 +549,7 @@ function DiagramSVG() {
       viewBox="0 0 680 420"
       xmlns="http://www.w3.org/2000/svg"
       className="block h-auto w-full"
-      aria-label="Diagrama: bidón → manguera → bomba 12V → grifo lavatorio plegable"
+      aria-label="Diagrama: estanque → manguera → bomba 12V → grifo lavatorio plegable"
     >
       <defs>
         <marker id="arrow-ocre-fa" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
@@ -585,11 +585,11 @@ function DiagramSVG() {
       <rect x="210" y="100" width="12" height="280" fill="url(#wood-dark-fa)" stroke="#7a4e2c" strokeWidth="1" />
       <rect x="30" y="92" width="460" height="12" rx="2" fill="#c4956a" stroke="#8b5e3c" strokeWidth="1.5" />
 
-      {/* Compartimento bidón */}
+      {/* Compartimento estanque */}
       <rect x="30" y="100" width="180" height="280" fill="url(#wood-fa)" stroke="none" />
-      <text x="120" y="125" textAnchor="middle" fontFamily="var(--font-geist-sans), sans-serif" fontSize="9" fontWeight="600" fill="#8b5e3c" letterSpacing="2">COMPARTIMENTO BIDÓN</text>
+      <text x="120" y="125" textAnchor="middle" fontFamily="var(--font-geist-sans), sans-serif" fontSize="9" fontWeight="600" fill="#8b5e3c" letterSpacing="2">COMPARTIMENTO ESTANQUE</text>
 
-      {/* Bidón */}
+      {/* Estanque */}
       <rect x="58" y="140" width="110" height="185" rx="8" fill="#b8d4e8" stroke="#4a7ca8" strokeWidth="2" />
       <rect x="88" y="134" width="50" height="14" rx="4" fill="#4a7ca8" stroke="#2d5a80" strokeWidth="1.5" />
       <path d="M88,134 Q113,120 138,134" fill="none" stroke="#4a7ca8" strokeWidth="3" strokeLinecap="round" />
@@ -678,7 +678,7 @@ function DiagramSVG() {
       <text x="170" y="354" fontFamily="var(--font-geist-mono), monospace" fontSize="8" fill="#4a7ca8">→ AGUA</text>
       <text x="355" y="195" fontFamily="var(--font-geist-mono), monospace" fontSize="8" fill="#B8763A">→ PRESIÓN</text>
 
-      <text x="40" y="90" fontFamily="var(--font-geist-sans), sans-serif" fontSize="10" fontWeight="600" fill="#8b5e3c" letterSpacing="3">SECCIÓN BIDÓN</text>
+      <text x="40" y="90" fontFamily="var(--font-geist-sans), sans-serif" fontSize="10" fontWeight="600" fill="#8b5e3c" letterSpacing="3">SECCIÓN ESTANQUE</text>
       <text x="222" y="90" fontFamily="var(--font-geist-sans), sans-serif" fontSize="10" fontWeight="600" fill="#1A1D17" letterSpacing="3">SECCIÓN OPERACIÓN</text>
 
       <text x="540" y="160" fontFamily="var(--font-geist-sans), sans-serif" fontSize="9" fill="#B8763A" fontWeight="600" letterSpacing="1">ENSAMBLE</text>
@@ -695,7 +695,7 @@ function DimensionsSVG() {
       viewBox="0 0 680 380"
       xmlns="http://www.w3.org/2000/svg"
       className="block h-auto w-full"
-      aria-label="Comparativa visual de compartimentos para bidones de 6L, 10L y 19L"
+      aria-label="Comparativa visual de compartimentos para estanques de 6L, 10L y 19L"
     >
       <rect width="680" height="380" fill="#FAF7F0" />
       <g stroke="#e8e4dc" strokeWidth="0.5" opacity="0.6">
@@ -728,7 +728,7 @@ function DimensionsSVG() {
         <text x="65" y="252" textAnchor="middle" fontFamily="var(--font-geist-mono), monospace" fontSize="9" fill="#1A1D17">120mm</text>
         <text x="65" y="268" textAnchor="middle" fontFamily="var(--font-geist-mono), monospace" fontSize="8" fill="#8A8A82">PROF. 150mm</text>
         <rect x="0" y="0" width="130" height="28" rx="3" fill="#B8763A" />
-        <text x="65" y="18" textAnchor="middle" fontFamily="var(--font-geist-sans), sans-serif" fontSize="13" fontWeight="600" fill="white" letterSpacing="2">BIDÓN 6L</text>
+        <text x="65" y="18" textAnchor="middle" fontFamily="var(--font-geist-sans), sans-serif" fontSize="13" fontWeight="600" fill="white" letterSpacing="2">ESTANQUE 6L</text>
       </g>
 
       {/* 10L */}
@@ -752,7 +752,7 @@ function DimensionsSVG() {
         <text x="77" y="263" textAnchor="middle" fontFamily="var(--font-geist-mono), monospace" fontSize="9" fill="#1A1D17">145mm</text>
         <text x="77" y="275" textAnchor="middle" fontFamily="var(--font-geist-mono), monospace" fontSize="8" fill="#8A8A82">PROF. 175mm</text>
         <rect x="0" y="0" width="155" height="28" rx="3" fill="#4a7ca8" />
-        <text x="77" y="18" textAnchor="middle" fontFamily="var(--font-geist-sans), sans-serif" fontSize="13" fontWeight="600" fill="white" letterSpacing="2">BIDÓN 10L</text>
+        <text x="77" y="18" textAnchor="middle" fontFamily="var(--font-geist-sans), sans-serif" fontSize="13" fontWeight="600" fill="white" letterSpacing="2">ESTANQUE 10L</text>
       </g>
 
       {/* 19L */}
@@ -776,7 +776,7 @@ function DimensionsSVG() {
         <text x="82" y="270" textAnchor="middle" fontFamily="var(--font-geist-mono), monospace" fontSize="9" fill="#1A1D17">170mm</text>
         <text x="82" y="278" textAnchor="middle" fontFamily="var(--font-geist-mono), monospace" fontSize="8" fill="#8A8A82">PROF. 195mm</text>
         <rect x="0" y="0" width="165" height="28" rx="3" fill="#1F4F38" />
-        <text x="82" y="18" textAnchor="middle" fontFamily="var(--font-geist-sans), sans-serif" fontSize="13" fontWeight="600" fill="white" letterSpacing="2">BIDÓN 19L</text>
+        <text x="82" y="18" textAnchor="middle" fontFamily="var(--font-geist-sans), sans-serif" fontSize="13" fontWeight="600" fill="white" letterSpacing="2">ESTANQUE 19L</text>
       </g>
     </svg>
   );

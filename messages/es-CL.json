@@ -112,10 +112,10 @@
         "active": "Estado activo / energizado"
       },
       "noteTitle": "Flujo del sistema",
-      "noteBody": "Bidón → manguera entrada → bomba 12V (alimentada por EcoFlow) → presurización → grifo del lavatorio plegable. La bomba opera on-demand, solo cuando hay flujo solicitado. Consumo estimado: 8–12 W."
+      "noteBody": "Estanque → manguera entrada → bomba 12V (alimentada por EcoFlow) → presurización → grifo del lavatorio plegable. La bomba opera on-demand, solo cuando hay flujo solicitado. Consumo estimado: 8–12 W."
     },
     "dimensions": {
-      "label": "DIMENSIONES ÓPTIMAS — COMPARTIMENTO BIDÓN",
+      "label": "DIMENSIONES ÓPTIMAS — COMPARTIMENTO ESTANQUE",
       "titlePlain": "Tamaños de",
       "titleEm": "compartimento",
       "scaleNote": "ESCALA APROX. 1:5 · HOLGURA +20 MM EN CADA DIMENSIÓN INCLUIDA"
@@ -126,10 +126,10 @@
       "titleEm": "completo",
       "colLeftLabel": "COMPONENTES PRINCIPALES",
       "colRightLabel": "ACCESORIOS DE INSTALACIÓN",
-      "c1Cat": "BIDÓN",
-      "c1Title": "Bidón con tapa rosca + toma inferior",
+      "c1Cat": "ESTANQUE",
+      "c1Title": "Estanque con tapa rosca + toma inferior",
       "c1Body": "Polietileno alimentario (HDPE). Toma inferior G1/2\" para conexión de manguera. Opciones: 6 L · 10 L · 19 L.",
-      "c1Tag": "TIPO: bidón con grifo inferior o jerrican",
+      "c1Tag": "TIPO: estanque con grifo inferior o jerrican",
       "c2Cat": "BOMBA DE AGUA 12V",
       "c2Title": "Bomba de diafragma autoaspirante",
       "c2Body": "Presión 0,8–1,5 bar · Caudal 2–3 L/min · Alimentación 12V DC o USB-C · Consumo 8–15 W · Self-priming (no necesita cebado).",
@@ -474,7 +474,7 @@
     "specsMaterials": "Materiales disponibles",
     "specsMaterialsValue": "Plástico reciclado o Terciado de abedul",
     "specsAddons": "Compatibilidad accesorios",
-    "specsAddonsValue": "Refrigeración hasta 30L · Energía hasta 800W · Bidón hasta 19L",
+    "specsAddonsValue": "Refrigeración hasta 30L · Energía hasta 800W · Water tank hasta 19L",
     "howItWorks": {
       "title": "Cómo funciona",
       "step1Title": "Llegas",
@@ -542,7 +542,7 @@
       "q3": "¿Funciona si llueve?",
       "a3": "Sí. Si elegís el material reciclado (PET/HDPE), es 100% resistente al agua. El terciado de abedul tiene un acabado con aceites hidrófugos.",
       "q4": "¿Puedo comprar el Campero sin accesorios y agregarlos después?",
-      "a4": "Sí. El Campero viene con compartimentos dimensionados para los accesorios recomendados (Alpicool, EcoFlow, bidones), pero si decides no comprarlos, el espacio queda libre y puedes usar uno similar que ya tengas. Siempre podés agregarlos después.",
+      "a4": "Sí. El Campero viene con compartimentos dimensionados para los accesorios recomendados (Alpicool, EcoFlow, estanques de agua San Hima), pero si decides no comprarlos, el espacio queda libre y puedes usar uno similar que ya tengas. Siempre podés agregarlos después.",
       "q5": "¿Hacen envíos a Argentina?",
       "a5": "Por ahora solo despachamos dentro de Chile. Estamos trabajando para expandir a Argentina pronto.",
       "q6": "¿Tienen garantía?",
@@ -705,7 +705,7 @@
         "rightOfWithdrawalBody": "Conforme al artículo 3 bis de la Ley 19.496 (Sernac), tenés derecho a retractarte de la compra dentro de los 10 días hábiles siguientes a la recepción del producto, devolviéndolo en las condiciones originales, sin uso y con todos sus accesorios. Para ejercer este derecho, escribinos a hola@camperooverland.cl indicando el número de pedido. Los costos de devolución corren por tu cuenta, salvo que la causa de la devolución sea un defecto de fabricación. Si la devolución se concreta, te restituimos el monto pagado dentro de los 10 días corridos siguientes a la recepción del producto en buen estado, por el mismo medio de pago utilizado en la compra.",
 
         "warrantyTitle": "10. Garantía",
-        "warrantyBody": "Ofrecemos una garantía voluntaria de 12 meses contados desde la fecha de entrega, que cubre defectos de fabricación en piezas estructurales del mueble. Esta garantía es adicional a la garantía legal mínima que establece la Ley 19.496. No cubre daños por uso indebido, golpes, exposición prolongada a condiciones extremas no previstas en el manual, ni desgaste normal por uso. Tampoco cubre los accesorios electrónicos (refrigeradores Alpicool, estaciones de energía EcoFlow, bidones), que tienen sus propias garantías directas del fabricante. Si tu Campero presenta un defecto cubierto, contactanos y coordinamos la reparación o reemplazo.",
+        "warrantyBody": "Ofrecemos una garantía voluntaria de 12 meses contados desde la fecha de entrega, que cubre defectos de fabricación en piezas estructurales del mueble. Esta garantía es adicional a la garantía legal mínima que establece la Ley 19.496. No cubre daños por uso indebido, golpes, exposición prolongada a condiciones extremas no previstas en el manual, ni desgaste normal por uso. Tampoco cubre los accesorios electrónicos (refrigeradores Alpicool, estaciones de energía EcoFlow, estanques de agua San Hima), que tienen sus propias garantías directas del fabricante. Si tu Campero presenta un defecto cubierto, contactanos y coordinamos la reparación o reemplazo.",
 
         "liabilityTitle": "11. Responsabilidad",
         "liabilityBody": "Campero Overland es responsable por los defectos de fabricación cubiertos por la garantía y por el cumplimiento del pedido en los términos acordados. No nos hacemos responsables del uso indebido del producto, accidentes derivados de modificaciones hechas por terceros, o daños indirectos. Las imágenes y representaciones esquemáticas del sitio son referenciales; pequeñas variaciones de color y acabado son normales en productos fabricados a mano.",
