@@ -56,18 +56,13 @@ export function Catalog() {
   return (
     <section>
       <div className="mx-auto max-w-7xl px-6 pb-[60px] pt-10 sm:px-12 lg:px-20">
-        <div className="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-          <div>
-            <p className="mb-2 font-mono text-[10px] uppercase tracking-[3px] text-ochre">
-              {t("label")}
-            </p>
-            <h2 className="font-serif text-3xl tracking-[-0.5px] text-green-deep sm:text-[32px]">
-              {t("title")}
-            </h2>
-          </div>
-          <span className="font-sans text-[12px] uppercase tracking-[0.5px] text-ink-soft">
-            {t("compareLink")}
-          </span>
+        <div className="mb-8">
+          <p className="mb-2 font-mono text-[10px] uppercase tracking-[3px] text-ochre">
+            {t("label")}
+          </p>
+          <h2 className="font-serif text-3xl tracking-[-0.5px] text-green-deep sm:text-[32px]">
+            {t("title")}
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

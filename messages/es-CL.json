@@ -10,6 +10,13 @@
     "skipToContent": "Saltar al contenido"
   },
 
+  "NotFound": {
+    "title": "Esta ruta no existe.",
+    "body": "La página que buscas no está o se movió. Volvamos a terreno conocido.",
+    "backHome": "Volver al inicio →",
+    "configurator": "Ir al configurador"
+  },
+
   "HomePage": {
     "Hero": {
       "label": "DISEÑADO EN LA PATAGONIA",
@@ -60,8 +67,7 @@
     "Tagline": "Diseñado en Pucón. Pensado para todo el sur.",
     "Catalog": {
       "label": "CATÁLOGO COMPLETO",
-      "title": "Seis formas de viajar.",
-      "compareLink": "VER COMPARATIVA →"
+      "title": "Seis formas de viajar."
     },
     "Complements": {
       "label": "LLEGA Y RUEDA",
@@ -479,7 +485,9 @@
     "specsMaterials": "Materiales disponibles",
     "specsMaterialsValue": "Plástico reciclado o Terciado de abedul",
     "specsAddons": "Compatibilidad accesorios",
-    "specsAddonsValue": "Refrigeración hasta 30L · Energía hasta 800W · Water tank hasta 19L",
+    "specsAddonsValue": "Refrigeración hasta 30L · Energía hasta 800W · Water tank 24L",
+    "priceFromLabel": "Desde",
+    "priceFinalHint": "Configurá para ver tu precio final.",
     "howItWorks": {
       "title": "Cómo funciona",
       "step1Title": "Llegas",

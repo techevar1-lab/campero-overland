@@ -102,13 +102,13 @@ export default async function ProductPage({
           <div className="flex flex-col items-start justify-between gap-6 border-t-[0.5px] border-green-deep/10 pt-10 sm:flex-row sm:items-end">
             <div>
               <p className="mb-1 font-mono text-[10px] uppercase tracking-[2px] text-ink-soft">
-                Desde
+                {t("priceFromLabel")}
               </p>
               <p className="font-serif text-3xl tracking-[-0.5px] text-ochre sm:text-4xl">
                 {formatPrice(priceFrom)}
               </p>
               <p className="mt-2 font-sans text-[12px] italic text-ink-soft">
-                Configurá para ver tu precio final.
+                {t("priceFinalHint")}
               </p>
             </div>
             <Link
