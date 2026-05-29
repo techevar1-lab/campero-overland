@@ -8,6 +8,8 @@ const ContactPayloadSchema = z.object({
   email: z.string().email(),
   subject: z.enum(["general", "product", "support", "other"]),
   message: z.string().min(10).max(2000),
+  // Honeypot anti-spam: input oculto que un usuario no completa.
+  website: z.string().max(200).optional(),
 });
 
 const SUBJECT_LABEL: Record<z.infer<typeof ContactPayloadSchema>["subject"], string> = {
@@ -48,7 +50,12 @@ export async function POST(req: NextRequest) {
       { status: 400 },
     );
   }
-  const { name, email, subject, message } = parsed.data;
+  const { name, email, subject, message, website } = parsed.data;
+
+  // Honeypot lleno → bot. Devolvemos 200 silencioso (no avisamos al bot).
+  if (website && website.trim().length > 0) {
+    return NextResponse.json({ ok: true });
+  }
 
   try {
     const { client, from } = resendClient();

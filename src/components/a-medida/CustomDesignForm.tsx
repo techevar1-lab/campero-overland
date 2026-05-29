@@ -68,6 +68,7 @@ export function CustomDesignForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot, queda vacío para humanos
 
   const [status, setStatus] = useState<Status>("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
@@ -131,6 +132,7 @@ export function CustomDesignForm() {
             name,
             email,
             phone: phone || undefined,
+            website: website || undefined,
           }
         : {
             vehicle,
@@ -147,6 +149,7 @@ export function CustomDesignForm() {
             name,
             email,
             phone: phone || undefined,
+            website: website || undefined,
           };
 
     setStatus("submitting");
@@ -202,6 +205,23 @@ export function CustomDesignForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-10">
+      {/* Honeypot anti-spam: fuera de la vista y del tab order. */}
+      <div
+        aria-hidden="true"
+        className="absolute left-[-9999px] h-px w-px overflow-hidden"
+      >
+        <label htmlFor="cd-website">Sitio web (no completar)</label>
+        <input
+          id="cd-website"
+          type="text"
+          name="website"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* VEHÍCULO */}
       <fieldset className="space-y-5">
         <SectionTitle>{t("vehicleSection")}</SectionTitle>

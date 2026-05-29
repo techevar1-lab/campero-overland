@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import materialesData from "@data/materiales.json";
 import productosData from "@data/productos.json";
+import { siteUrl } from "@/lib/env";
 import { Link } from "@/i18n/navigation";
 import { formatPrice, type Price } from "@/lib/format";
 
@@ -55,8 +56,32 @@ export default async function ProductPage({
     currency: "CLP",
   };
 
+  // JSON-LD Product (schema.org). Fabricación bajo pedido (MadeToOrder),
+  // precio "desde" en CLP. Cuando haya fotos reales, agregar `image: [...]`.
+  const base = siteUrl().replace(/\/$/, "");
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: product.description,
+    brand: { "@type": "Brand", name: "Campero Overland" },
+    category: "Outdoor & Camping > Vehicle Camping Furniture",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: priceFrom.currency,
+      price: priceFrom.amount,
+      availability: "https://schema.org/MadeToOrder",
+      url: `${base}/${locale}/producto/${product.slug}`,
+      seller: { "@type": "Organization", name: "Campero Overland" },
+    },
+  } as const;
+
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       {/* HERO */}
       <section className="bg-cream">
         <div className="mx-auto max-w-5xl px-6 pb-12 pt-10 sm:px-12 lg:px-20">

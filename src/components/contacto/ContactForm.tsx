@@ -15,6 +15,7 @@ const PayloadSchema = z.object({
   email: z.string().email(),
   subject: z.enum(SUBJECTS),
   message: z.string().min(10).max(2000),
+  website: z.string().max(200).optional(),
 });
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -28,6 +29,7 @@ export function ContactForm() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState<Subject>("general");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot, queda vacío para humanos
 
   const [status, setStatus] = useState<Status>("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
@@ -55,7 +57,7 @@ export function ContactForm() {
     setSubmitError(null);
     if (!validate()) return;
 
-    const payload = PayloadSchema.safeParse({ name, email, subject, message });
+    const payload = PayloadSchema.safeParse({ name, email, subject, message, website });
     if (!payload.success) return; // defensa: ya validado pero por las dudas
 
     setStatus("submitting");
@@ -112,6 +114,23 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
+      {/* Honeypot anti-spam: fuera de la vista y del tab order. */}
+      <div
+        aria-hidden="true"
+        className="absolute left-[-9999px] h-px w-px overflow-hidden"
+      >
+        <label htmlFor="contact-website">Sitio web (no completar)</label>
+        <input
+          id="contact-website"
+          type="text"
+          name="website"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <Field
         id="contact-name"
         label={t("nameLabel")}

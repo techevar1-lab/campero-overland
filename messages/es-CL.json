@@ -17,6 +17,13 @@
     "configurator": "Ir al configurador"
   },
 
+  "ErrorPage": {
+    "title": "Algo salió mal.",
+    "body": "Hubo un problema cargando esta página. Reintenta o vuelve al inicio. Si el problema persiste, escríbenos a hola@camperooverland.cl.",
+    "retry": "Reintentar",
+    "backHome": "Volver al inicio →"
+  },
+
   "HomePage": {
     "Hero": {
       "label": "DISEÑADO EN LA PATAGONIA",

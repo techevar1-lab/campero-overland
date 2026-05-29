@@ -39,6 +39,8 @@ const PayloadSchema = z
     phone: z.string().max(40).optional(),
     // contexto opcional (ej. viene del configurador)
     source: z.string().max(80).optional(),
+    // Honeypot anti-spam: input oculto que un usuario no completa.
+    website: z.string().max(200).optional(),
   })
   .superRefine((data, ctx) => {
     if (data.requestType === "modify") {
@@ -162,6 +164,11 @@ export async function POST(req: NextRequest) {
     );
   }
   const data = parsed.data;
+
+  // Honeypot lleno → bot. Devolvemos 200 silencioso (no avisamos al bot).
+  if (data.website && data.website.trim().length > 0) {
+    return NextResponse.json({ ok: true });
+  }
 
   const to =
     process.env.CUSTOM_DESIGN_EMAIL?.trim() || "hola@camperooverland.cl";

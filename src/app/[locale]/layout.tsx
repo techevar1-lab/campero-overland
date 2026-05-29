@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -40,6 +40,29 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#04342C",
+};
+
+/**
+ * JSON-LD Organization (schema.org). Lo lee Google para el panel de marca
+ * y rich results. Imágenes/redes sociales se agregan cuando estén.
+ */
+const ORG_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Campero Overland",
+  url: siteUrl(),
+  logo: `${siteUrl().replace(/\/$/, "")}/icon.png`,
+  email: "hola@camperooverland.cl",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Pucón",
+    addressRegion: "La Araucanía",
+    addressCountry: "CL",
+  },
+} as const;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -64,6 +87,11 @@ export default async function LocaleLayout({
       className={`${fraunces.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <script
+          type="application/ld+json"
+          // JSON-LD estático, contenido seguro (sin entrada de usuario).
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}
+        />
         <NextIntlClientProvider>
           <a
             href="#main-content"
