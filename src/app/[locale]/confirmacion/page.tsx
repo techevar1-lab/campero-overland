@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ResetConfiguratorOnMount } from "@/components/configurador/ResetConfiguratorOnMount";
 import { Link } from "@/i18n/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Confirmation");
+  return {
+    title: "Confirmación · Campero Overland",
+    description: t("metaDescription"),
+    robots: { index: false, follow: false },
+  };
+}
 
 type Status = "success" | "failure" | "pending";
 

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { siteUrl } from "@/lib/env";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
@@ -28,9 +29,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Campero Overland",
+  metadataBase: new URL(siteUrl()),
+  title: "Campero Overland — Camper portátil para SUV overland",
   description:
-    "Mobiliario portátil de camperización para SUV overland. Diseñado en Pucón, Chile.",
+    "Mobiliario portátil de camperización para SUV overland. Sistema de ensambles sin tornillos. Diseñado en Pucón, Chile.",
+  openGraph: {
+    siteName: "Campero Overland",
+    locale: "es_CL",
+    type: "website",
+  },
 };
 
 export function generateStaticParams() {
@@ -49,6 +56,7 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
+  const t = await getTranslations("Navigation");
 
   return (
     <html
@@ -57,8 +65,16 @@ export default async function LocaleLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         <NextIntlClientProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ochre focus:px-4 focus:py-2 focus:font-sans focus:text-[13px] focus:text-cream"
+          >
+            {t("skipToContent")}
+          </a>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" tabIndex={-1} className="flex-1">
+            {children}
+          </main>
           <Footer />
         </NextIntlClientProvider>
       </body>

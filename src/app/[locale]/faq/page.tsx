@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import { ChevronDown } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Faq");
+  return {
+    title: "Preguntas frecuentes · Campero Overland",
+    description: t("metaDescription"),
+  };
+}
 
 // Mapeo de preguntas → categoría. Cuando crezca la FAQ, mover a data/.
 // Categorías sin items se omiten (no renderean sección vacía).

@@ -6,7 +6,8 @@
     "history": "Historia",
     "contact": "Contacto",
     "openMenu": "Abrir menú",
-    "closeMenu": "Cerrar menú"
+    "closeMenu": "Cerrar menú",
+    "skipToContent": "Saltar al contenido"
   },
 
   "HomePage": {
@@ -365,6 +366,7 @@
   },
 
   "Configurator": {
+    "metaDescription": "Configura tu Campero en 6 pasos: vehículo, modo de viaje, modelo, material y accesorios. Precio en tiempo real y pago seguro.",
     "progress": {
       "label": "PASO {current} DE {total}",
       "goTo": "Volver al paso {step} de {total}"
@@ -421,6 +423,7 @@
     "step3": {
       "question": "Tu Campero recomendado",
       "helper": "Esta opción se adapta a tu vehículo y uso.",
+      "fallback": "Define vehículo y modo de viaje primero.",
       "bespokeTitle": "Diseño a medida",
       "bespokeSubtitle": "Prefiero que la arquitecta diseñe algo 100% a mi medida. Sin pago ahora: te enviamos una propuesta en 7 días.",
       "bespokeBadge": "A MEDIDA →",
@@ -535,6 +538,7 @@
 
   "Faq": {
     "title": "Preguntas frecuentes",
+    "metaDescription": "Respuestas sobre el Campero: instalación sin tornillos, armado, materiales, envíos a Chile, garantía y accesorios.",
     "categories": {
       "product": "Producto y diseño",
       "purchase": "Compra y configuración",
@@ -592,7 +596,7 @@
     "alternatives": {
       "title": "Otros canales",
       "whatsappLabel": "WhatsApp Business",
-      "whatsappValue": "+56 9 XXXX XXXX",
+      "whatsappValue": "+56 9 8953 7559",
       "emailLabel": "Email",
       "emailValue": "hola@camperooverland.cl",
       "locationLabel": "Ubicación",
@@ -693,6 +697,7 @@
   },
 
   "Confirmation": {
+    "metaDescription": "Estado de tu pedido Campero Overland.",
     "success": {
       "title": "¡Tu Campero está en producción!",
       "subtitle": "Recibimos tu pago y comenzamos a fabricar.",

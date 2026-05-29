@@ -20,9 +20,7 @@ export function Step3Model() {
     return (
       <>
         <StepHeader question={t("question")} helper={t("helper")} />
-        <p className="font-sans text-sm text-ink-soft">
-          Define vehículo y modo de viaje primero.
-        </p>
+        <p className="font-sans text-sm text-ink-soft">{t("fallback")}</p>
       </>
     );
   }
