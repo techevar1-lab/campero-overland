@@ -507,6 +507,17 @@
       "step3Title": "Rodás",
       "step3Body": "Tu Jimny convertido en camper portátil."
     },
+    "howAssemble": {
+      "label": "PASO A PASO",
+      "title": "Cómo se arma tu cama",
+      "subtitle": "Tres movimientos. Sin tornillos.",
+      "step1Title": "Desliza el cajón",
+      "step1Body": "Abres el módulo y abates el panel lateral. Los listones quedan a mano para el siguiente paso.",
+      "step2Title": "Despliega los listones",
+      "step2Body": "Los listones de madera se ensamblan por presión y forman la base plana de la cama.",
+      "step3Title": "Coloca el colchón",
+      "step3Body": "Sumas el colchón y la almohada. Tu Campero se transforma en refugio."
+    },
     "cta": "Configurar este modelo →",
     "notFound": {
       "title": "Modelo no encontrado",

@@ -27,5 +27,13 @@
     "power_300": "/renders/accessories/power_river_placeholder.png",
     "power_600": "/renders/accessories/power_river_placeholder.png",
     "power_800": "/renders/accessories/power_river_placeholder.png"
+  },
+  "_actionsComment": "Secuencias 'cómo se arma tu cama' para la página de producto. Solo aplica a productos con hasBed=true. Si un producto con cama no tiene entrada acá, la sección no se renderiza. step3 reusa el render de products/<id>.png (la cama lista con colchón).",
+  "actions": {
+    "j3_cama1": {
+      "step1": "/renders/actions/j3_cama1_step1.png",
+      "step2": "/renders/actions/j3_cama1_step2.png",
+      "step3": "/renders/products/j3_cama1.png"
+    }
   }
 }

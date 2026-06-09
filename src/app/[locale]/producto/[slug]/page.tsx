@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import materialesData from "@data/materiales.json";
 import productosData from "@data/productos.json";
+import renderAnchors from "@data/renderAnchors.json";
 import { siteUrl } from "@/lib/env";
 import { Link } from "@/i18n/navigation";
 import { formatPrice, type Price } from "@/lib/format";
+
+type ActionSequence = { step1: string; step2: string; step3: string };
+const ACTIONS: Record<string, ActionSequence | undefined> = (
+  renderAnchors as { actions?: Record<string, ActionSequence> }
+).actions ?? {};
 
 type RouteParams = { locale: string; slug: string };
 
@@ -194,6 +201,44 @@ export default async function ProductPage({
         </div>
       </section>
 
+      {/* CÓMO SE ARMA LA CAMA — solo para productos con cama y data en
+          renderAnchors.actions */}
+      {product.hasBed && ACTIONS[product.id] ? (
+        <section className="border-t-[0.5px] border-green-deep/10 bg-cream-pure">
+          <div className="mx-auto max-w-5xl px-6 py-16 sm:px-12 lg:px-20">
+            <p className="mb-3 font-mono text-[10px] uppercase tracking-[3px] text-ochre">
+              {t("howAssemble.label")}
+            </p>
+            <h2 className="mb-2 font-serif text-2xl tracking-[-0.3px] text-green-deep sm:text-[28px]">
+              {t("howAssemble.title")}
+            </h2>
+            <p className="mb-10 font-sans text-[15px] leading-[1.6] text-ink-soft">
+              {t("howAssemble.subtitle")}
+            </p>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+              <AssemblyStep
+                order="01"
+                src={ACTIONS[product.id]!.step1}
+                title={t("howAssemble.step1Title")}
+                body={t("howAssemble.step1Body")}
+              />
+              <AssemblyStep
+                order="02"
+                src={ACTIONS[product.id]!.step2}
+                title={t("howAssemble.step2Title")}
+                body={t("howAssemble.step2Body")}
+              />
+              <AssemblyStep
+                order="03"
+                src={ACTIONS[product.id]!.step3}
+                title={t("howAssemble.step3Title")}
+                body={t("howAssemble.step3Body")}
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* CÓMO FUNCIONA */}
       <section className="bg-ochre-soft">
         <div className="mx-auto max-w-5xl px-6 py-16 sm:px-12 lg:px-20">
@@ -283,6 +328,44 @@ function Step({
         {title}
       </h3>
       <p className="font-sans text-[13px] leading-[1.65] text-ink-soft">
+        {body}
+      </p>
+    </div>
+  );
+}
+
+function AssemblyStep({
+  order,
+  src,
+  title,
+  body,
+}: {
+  order: string;
+  src: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <div>
+      <p className="mb-3 font-mono text-[10px] uppercase tracking-[2px] text-ochre">
+        {order}
+      </p>
+      <div
+        className="relative mb-5 w-full overflow-hidden bg-cream"
+        style={{ aspectRatio: "16 / 9" }}
+      >
+        <Image
+          src={src}
+          alt={title}
+          fill
+          sizes="(max-width: 640px) 100vw, 33vw"
+          className="object-contain"
+        />
+      </div>
+      <h3 className="mb-2 font-serif text-[20px] leading-[1.2] text-green-deep">
+        {title}
+      </h3>
+      <p className="font-sans text-[14px] leading-[1.6] text-ink-soft">
         {body}
       </p>
     </div>
