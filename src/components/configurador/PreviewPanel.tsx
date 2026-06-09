@@ -1,6 +1,10 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import {
+  LayeredPreview,
+  hasRender,
+} from "@/components/configurador/LayeredPreview";
 import { useConfigurator } from "@/lib/configurator/context";
 import { getAccessoryVariant } from "@/lib/configurator/data";
 import type { AddonGroup, ConfiguratorState } from "@/lib/configurator/types";
@@ -35,11 +39,19 @@ export function PreviewPanel() {
 
   return (
     <aside className="overflow-hidden rounded-sm border-[0.5px] border-green-deep/10 bg-cream-pure">
-      <div className="relative flex aspect-square items-end bg-green-medium p-[18px]">
-        <span className="font-mono text-[10px] uppercase tracking-[2px] text-cream/40">
-          [ {product.shortTitle.toUpperCase()} ]
-        </span>
-      </div>
+      {hasRender(product.id) ? (
+        <LayeredPreview
+          productId={product.id}
+          addons={state.addons}
+          productLabel={product.title}
+        />
+      ) : (
+        <div className="relative flex aspect-square items-end bg-green-medium p-[18px]">
+          <span className="font-mono text-[10px] uppercase tracking-[2px] text-cream/40">
+            [ {product.shortTitle.toUpperCase()} ]
+          </span>
+        </div>
+      )}
 
       <div className="space-y-5 p-6">
         <header>

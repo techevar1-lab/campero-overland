@@ -1,0 +1,31 @@
+{
+  "_comment": "Anchors para componer el preview en vivo del configurador. Cada producto tiene un render base (PNG transparente, mismo ángulo para todos los accesorios) y, por cada compartimento (water/fridge/power), las coordenadas (cx, cy, w) relativas al lienzo donde se posiciona el accesorio. Coordenadas en fracción [0..1]; w es el ancho del accesorio relativo al ancho del lienzo (la altura sale natural por la proporción del PNG del accesorio). Si un anchor es null, el accesorio NO se renderiza para ese producto (todavía).",
+  "products": {
+    "j3_org": {
+      "src": "/renders/products/j3_org.png",
+      "aspect": [1920, 1080],
+      "anchors": {
+        "water": null,
+        "fridge": null,
+        "power": { "cx": 0.4771, "cy": 0.3454, "w": 0.1688 }
+      }
+    },
+    "j3_cama1": {
+      "src": "/renders/products/j3_cama1.png",
+      "aspect": [1920, 1080],
+      "anchors": {
+        "water": null,
+        "fridge": null,
+        "power": null
+      }
+    }
+  },
+  "accessories": {
+    "water_24": null,
+    "fridge_18": null,
+    "fridge_30": null,
+    "power_300": "/renders/accessories/power_river_placeholder.png",
+    "power_600": "/renders/accessories/power_river_placeholder.png",
+    "power_800": "/renders/accessories/power_river_placeholder.png"
+  }
+}
