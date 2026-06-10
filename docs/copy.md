@@ -110,7 +110,7 @@ Carrusel de imágenes (3-5 por producto cuando estén las fotos reales).
 3 pasos cortos:
 1. **Llegas** — "Te entregamos el Campero en su estuche."
 2. **Armas** — "Sin herramientas. Ensamble por fricción en 10 minutos."
-3. **Rodás** — "Tu Jimny convertido en camper portátil."
+3. **Ruedas** — "Tu Jimny convertido en camper portátil."
 
 ### CTA final
 - "Configurar este modelo →"
