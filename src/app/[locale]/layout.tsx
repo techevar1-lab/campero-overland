@@ -3,6 +3,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { siteUrl } from "@/lib/env";
@@ -105,6 +107,10 @@ export default async function LocaleLayout({
           </main>
           <Footer />
         </NextIntlClientProvider>
+        {/* Vercel Analytics + Speed Insights — pageviews y Core Web Vitals.
+            Solo emite en producción; en dev/preview no manda eventos. */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
