@@ -35,5 +35,10 @@
       "step2": "/renders/actions/j3_cama1_step2.png",
       "step3": "/renders/products/j3_cama1.png"
     }
+  },
+  "_catalogComment": "Foto editorial del producto en contexto (Jimny + paisaje) para las tarjetas del catálogo en el home. 4:3, alta resolución. Si un producto no tiene entrada acá, la tarjeta cae al placeholder verde.",
+  "catalog": {
+    "j3_org": "/renders/catalog/j3_org.png",
+    "j3_cama1": "/renders/catalog/j3_cama1.png"
   }
 }

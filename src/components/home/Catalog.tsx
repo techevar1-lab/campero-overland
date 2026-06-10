@@ -1,18 +1,18 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import productosData from "@data/productos.json";
 import renderAnchors from "@data/renderAnchors.json";
-import { JimnyFrame } from "@/components/home/JimnyFrame";
 import { Link } from "@/i18n/navigation";
 import { formatPrice, type Price } from "@/lib/format";
 
-const RENDERED_PRODUCTS: Record<string, { src: string } | undefined> = (
-  renderAnchors as { products: Record<string, { src: string }> }
-).products;
-
 type Product = (typeof productosData.products)[number];
 
-// Placeholder técnico que se muestra dentro del cuadro verde mientras no hay
-// fotos de producto reales. Cuando lleguen las fotos, se reemplaza por <Image>.
+const CATALOG_PHOTOS: Record<string, string | undefined> = (
+  renderAnchors as { catalog?: Record<string, string> }
+).catalog ?? {};
+
+// Placeholder técnico que se muestra dentro del cuadro verde mientras no
+// hay foto editorial del producto en `renderAnchors.catalog`.
 const PLACEHOLDER_LABELS: Record<string, string> = {
   j3_org: "JIMNY 3P · ORG",
   j3_cama1: "JIMNY 3P · CAMA",
@@ -25,41 +25,35 @@ const PLACEHOLDER_LABELS: Record<string, string> = {
 function ProductCard({ product, index }: { product: Product; index: number }) {
   const orderNumber = String(index + 1).padStart(2, "0");
   const placeholder = PLACEHOLDER_LABELS[product.id] ?? product.id.toUpperCase();
-
-  // Si el producto tiene render base y el vehículo es Jimny 3p, mostramos
-  // el composite Jimny + producto. Si no, placeholder verde.
-  const render = RENDERED_PRODUCTS[product.id];
-  const showJimnyComposite =
-    render !== undefined && product.vehicle === "jimny3";
+  const photoSrc = CATALOG_PHOTOS[product.id];
 
   return (
     <Link
       href={`/producto/${product.slug}`}
       className="group block focus:outline-none"
     >
-      <div
-        className={`relative mb-3.5 aspect-square overflow-hidden transition-opacity group-hover:opacity-95 group-focus-visible:ring-2 group-focus-visible:ring-ochre group-focus-visible:ring-offset-2 ${
-          showJimnyComposite
-            ? "border-[0.5px] border-green-deep/10 bg-cream-pure"
-            : "flex items-end bg-green-medium p-[18px]"
-        }`}
-      >
-        {showJimnyComposite ? (
-          <JimnyFrame
-            src={render.src}
+      <div className="relative mb-3.5 aspect-[4/3] overflow-hidden border-[0.5px] border-green-deep/10 transition-opacity group-hover:opacity-95 group-focus-visible:ring-2 group-focus-visible:ring-ochre group-focus-visible:ring-offset-2">
+        {photoSrc ? (
+          <Image
+            src={photoSrc}
             alt={product.title}
-            orderNumber={orderNumber}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
           />
         ) : (
-          <>
-            <span className="absolute left-3.5 top-3.5 font-mono text-[9px] uppercase tracking-[2px] text-ochre">
-              {orderNumber}
-            </span>
+          <div className="flex h-full w-full items-end bg-green-medium p-[18px]">
             <span className="font-mono text-[10px] uppercase tracking-[2px] text-cream/40">
               [ {placeholder} ]
             </span>
-          </>
+          </div>
         )}
+        {/* Número de orden — sobre la foto o el placeholder. Lleva un
+            gradiente sutil detrás para que se lea sobre cualquier fondo. */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/30 to-transparent" />
+        <span className="absolute left-3.5 top-3.5 font-mono text-[10px] uppercase tracking-[2px] text-cream">
+          {orderNumber}
+        </span>
       </div>
 
       <div className="mb-1 font-serif text-[17px] leading-[1.25] text-green-deep">
